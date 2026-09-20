@@ -152,6 +152,12 @@ p{margin:0}
 .flow span{display:block;font-family:var(--mono);font-weight:400;font-size:10px;letter-spacing:.1em;color:var(--slate);margin-bottom:8px}
 .flow .in{background:var(--ink);color:var(--paper)}
 .flow .in span{color:var(--steel)}
+.turnkey{margin-top:clamp(48px,6vw,80px);padding-top:clamp(36px,4vw,56px);border-top:1px solid var(--hair-l);display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:32px 64px;align-items:start}
+.turnkey h3{font-size:clamp(24px,2.6vw,34px)}
+.turnkey p{color:var(--slate);max-width:52ch;margin-top:14px;line-height:1.65}
+.svc-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--hair-l);border:1px solid var(--hair-l)}
+.svc-list li{background:var(--paper);padding:14px 14px;font-family:var(--display);font-stretch:112.5%;font-weight:600;font-size:12px;letter-spacing:.08em;text-transform:uppercase;line-height:1.3}
+@media (max-width:900px){.turnkey{grid-template-columns:1fr}.svc-list{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:900px){.integrated{grid-template-columns:1fr}.flow{grid-template-columns:repeat(4,1fr)}.flow div{border-bottom:1px solid var(--ink)}.flow div:nth-child(4n){border-right:0}.flow div:nth-child(n+5){border-bottom:0}}
 @media (max-width:480px){.flow{grid-template-columns:repeat(2,1fr)}.flow div{border-right:1px solid var(--ink);border-bottom:1px solid var(--ink)}.flow div:nth-child(2n){border-right:0}.flow div:nth-child(n+5){border-bottom:1px solid var(--ink)}.flow div:nth-last-child(-n+1){border-bottom:0}}
 
@@ -358,7 +364,7 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
         <div><div class="idx">CNC MACHINING</div><h3>Precision CNC Machining</h3></div>
         <p>Multi-axis turning and milling on alloys that punish sloppy setups. Non-magnetic stainless, high-nickel alloys, and tool steels held to prints that leave no room for interpretation.</p>
         <ul>
-          <li>Non-magnetic stainless (Nitronic 50) and high-nickel alloys</li>
+          <li>Non-magnetic and high-nickel alloys (Nitronic 50, Inconel, Monel)</li>
           <li>Long, thin-wall, and deep-bore work</li>
           <li>Tight-tolerance threads, seals, and datums</li>
           <li>In-house programming and prove-out</li>
@@ -367,10 +373,10 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
       <article class="cap">
         <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="7" y="9" width="26" height="22"/><path d="M7 20h26M13 9v22M27 9v22"/></svg>
         <div><div class="idx">ENGINEERED ELASTOMERS</div><h3>Engineered Elastomers &amp; Rubber-to-Metal Bonding</h3></div>
-        <p>Proprietary HNBR compounds developed with our own chemists, molded in-house and bonded to the metal we machined. One supplier, one accountability, one signature on the cert.</p>
+        <p>Proprietary HNBR compounds engineered with our compounding partner's chemists, molded in-house and bonded to the metal we machined. One supplier, one accountability, one signature on the cert.</p>
         <ul>
           <li>Proprietary HNBR compounds (Advanced Series, HyperHeat™)</li>
-          <li>Compression and transfer molding</li>
+          <li>Compression molding</li>
           <li>Rubber-to-metal bonding</li>
           <li>High-temperature and high-pressure service</li>
         </ul>
@@ -383,7 +389,7 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
           <li>Repair and refurbishment of critical components</li>
           <li>Welding, straightening, and re-machining</li>
           <li>Hot-job scheduling with real-time status</li>
-          <li>Fiber-laser part marking and traceability</li>
+          <li>Documented inspection and full traceability</li>
         </ul>
       </article>
     </div>
@@ -400,9 +406,20 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
         <div><span>03</span>CNC machine</div>
         <div><span>04</span>Mold &amp; bond</div>
         <div><span>05</span>Fabricate &amp; assemble</div>
-        <div><span>06</span>Inspect &amp; mark</div>
+        <div><span>06</span>Inspect &amp; certify</div>
         <div class="in"><span>07</span>Ship &amp; support</div>
       </div>
+    </div>
+
+    <div class="turnkey">
+      <div>
+        <div class="eyebrow">Turnkey through to finish</div>
+        <h3 style="margin-top:14px">One PO. A finished part.</h3>
+        <p>Machining is rarely the last step. Heat treat, plating, coatings, and secondary operations run through a curated network of vendors we've qualified and manage ourselves, so you place one order and receive one finished, inspected, certified part.</p>
+      </div>
+      <ul class="svc-list" aria-label="Secondary services managed by Fifty X">
+        <li>Heat treatment</li><li>Passivation</li><li>Anodizing</li><li>Plating</li><li>Phosphate coating</li><li>Chemical conversion coating</li><li>Black oxide</li><li>Powder coating</li><li>Painting</li><li>Surface treatment</li><li>Grinding</li><li>Honing</li><li>Welding</li><li>Assembly</li><li>Laser marking</li><li>Engraving</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -491,7 +508,7 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
         <div class="eyebrow">Technology &amp; continuous improvement</div>
         <h2 style="margin-top:14px">Never complacent.</h2>
       </div>
-      <p class="intro">"Technology" is in our name because it is in our operating model. We put collaborative robots on the floor in 2025, we mark parts with fiber lasers, and we write our own programs. Every year the shop should be measurably faster, more repeatable, and more capable than the year before. If it isn't, we've failed.</p>
+      <p class="intro">"Technology" is in our name because it is in our operating model. We put collaborative robots on the floor in 2025, we run sub-spindle turning centers that finish a part in one handling, and we write our own programs. Every year the shop should be measurably faster, more repeatable, and more capable than the year before. If it isn't, we've failed.</p>
     </div>
     <div class="tech-grid">
       <article>
@@ -499,8 +516,8 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
         <p>Collaborative robots load and unload our machines so that spindles cut while people solve problems. The roadmap is more cells, longer unattended runs, and consistent throughput.</p>
       </article>
       <article>
-        <h3>Fiber-laser marking &amp; traceability</h3>
-        <p>Permanent part identification on stainless and high-nickel alloys, with documented process recipes. Every critical part can be traced to its lot, program, and inspection record.</p>
+        <h3>Sub-spindle CNC turning</h3>
+        <p>Front and back operations in a single setup. The part is cut, handed off, and finished without ever leaving the machine, which removes a re-fixture, a second datum, and the tolerance stack that comes with them.</p>
       </article>
       <article>
         <h3>Proprietary compound development</h3>
@@ -530,18 +547,19 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
         <h2 style="margin-top:14px">Founded on one press.<br>Built on keeping our word.</h2>
         <div class="body">
           <p><b>Fifty X Technology started in 2017 in Cypress, Texas</b> with one molding press, months of R&amp;D on a proprietary HNBR compound, and a founder who had spent years on the other side of the desk buying downhole components. The first customers came by word of mouth. So did every customer after that.</p>
-          <p>In 2019 we acquired a local CNC shop and its 30-year machinist, who became a stakeholder. In 2020 we tripled our footprint the week the world shut down and secured our CAGE code. In 2024 we moved into a purpose-built two-building campus. In 2025 we put our first robots on the floor.</p>
+          <p>In 2019 we bought our first CNC machines and brought machining under the same roof as molding. In 2020 we tripled our footprint the week the world shut down and secured our CAGE code. Since then we have kept expanding the CNC fleet, moved into a purpose-built two-building campus, put our first robots on the floor, and added sub-spindle turning.</p>
           <p><b>Every one of those moves was made to serve customers better</b> — faster response, tighter control, more capability under one roof. Growth to date has been entirely inbound. We intend to keep earning it that way.</p>
         </div>
       </div>
       <div>
         <ul class="timeline" aria-label="Company timeline">
           <li><span class="y">2017</span><span>Founded in Cypress, TX. First molding press; proprietary HNBR compound developed with chemists.</span></li>
-          <li><span class="y">2019</span><span>Acquired a local CNC machine shop; precision machining joins molding under one roof.</span></li>
+          <li><span class="y">2019</span><span>Acquired the first CNC machinery; precision machining joins molding under one roof.</span></li>
           <li><span class="y">2020</span><span>Tripled the facility. CAGE code 8JPP2 secured; federal contracting begins.</span></li>
+          <li><span class="y">2022</span><span>Expanded the CNC fleet with additional multi-axis turning and milling capacity.</span></li>
           <li><span class="y">2024</span><span>Moved to a custom two-building manufacturing campus at 19615 Juergen Rd.</span></li>
-          <li><span class="y">2025</span><span>Collaborative robots deployed for machine tending. Fiber-laser marking brought in-house.</span></li>
-          <li><span class="y">2026</span><span>Lone Star Downhole Products becomes Fifty X Technology.</span></li>
+          <li><span class="y">2025</span><span>Collaborative robots deployed for machine tending.</span></li>
+          <li><span class="y">2026</span><span>Sub-spindle CNC turning introduced. Lone Star Downhole Products becomes Fifty X Technology.</span></li>
         </ul>
       </div>
     </div>
@@ -591,7 +609,6 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
             <option>Quote — new machined components</option>
             <option>Quote — rubber centralizers / molded parts</option>
             <option>Repair or refurbishment</option>
-            <option>Hot job — rig or tool waiting</option>
             <option>Capabilities conversation / supplier qualification</option>
             <option>Something else</option>
           </select>
