@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Fifty X MWD Components</title>
-<meta name="description" content="MWD components from Fifty X Technology — stocked, repeat-production and made-to-print lower-end, interconnect, spearpoint, pressure housing, muleshoe and running gear parts, plus housing recuts and muleshoe sleeve rebuilds. Cypress, Texas.">
+<title>Fifty X CNC Machining</title>
+<meta name="description" content="Precision CNC machining in Cypress, Texas. Multi-axis turning and milling, robotic machine tending, difficult materials, in-house process engineering, documented inspection, and managed secondary services. Fifty X Technology.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Manrope:wght@400..800&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -282,67 +282,57 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
 @media (max-width:520px){.foot{grid-template-columns:1fr}}
 
 
-/* ---------- MWD components page ---------- */
+/* ---------- CNC machining page ---------- */
 .links a.current{color:var(--paper);border-color:var(--paper)}
-.head>div>.intro+.intro{margin-top:14px}
 .intro-d{color:var(--steel);line-height:1.65;font-size:clamp(16px,1.25vw,18px);max-width:60ch}
-.head .intro-d{margin-top:0}
-.fine-d{margin-top:18px;font-size:12.5px;color:var(--steel-2);line-height:1.55;max-width:60ch}
 .mono.lbl{color:var(--steel-2);margin-bottom:12px}
 .light .mono.lbl{color:var(--slate)}
+.section{overflow:hidden}
 
-/* hero with full-bleed photo */
-.mwd-hero{position:relative;isolation:isolate}
-.mwd-hero::before{display:none}
-.mwd-hero-bg{position:absolute;inset:0;z-index:-1;overflow:hidden}
-.mwd-hero-bg img{width:100%;height:100%;object-fit:cover;object-position:70% 50%;opacity:.55;
-  mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.35) 30%,#000 62%),linear-gradient(to bottom,#000 70%,transparent);
-  -webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.35) 30%,#000 62%);mask-composite:intersect;-webkit-mask-composite:source-in}
-.mwd-hero .wrap{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
-.mwd-hero .lede{color:#B8BEC4}
+/* ghost word motif */
+.ghost{font-family:var(--display);font-stretch:112.5%;font-weight:700;font-size:clamp(56px,10.5vw,156px);line-height:.9;letter-spacing:-.02em;color:transparent;-webkit-text-stroke:1.5px #34393E;white-space:nowrap;user-select:none;margin:-.1em 0 clamp(20px,3vw,40px) -.03em}
+.ghost-light{-webkit-text-stroke:1.5px #C9CED3}
+@media (max-width:600px){.ghost{font-size:16vw;white-space:normal;line-height:.95}}
+
+/* hero: text + photo panel */
+.cnc-hero .wrap{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(32px,5vw,80px);align-items:center}
+.cnc-hero .lede{color:#B8BEC4}
+.hero-photo{margin:0;position:relative;justify-self:end;width:100%;max-width:520px}
+.hero-photo img{display:block;width:100%;height:clamp(420px,56vw,660px);object-fit:cover;object-position:50% 42%;border:1px solid var(--hair-d)}
+.hero-photo::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(to bottom,transparent 60%,rgba(0,0,0,.55))}
+.hero-photo figcaption{position:absolute;left:18px;bottom:16px;right:18px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--paper);display:flex;flex-direction:column;gap:4px;line-height:1.4}
+.hero-photo figcaption span:last-child{color:var(--steel)}
 @media (max-width:900px){
-  .mwd-hero .wrap{grid-template-columns:1fr}
-  .mwd-hero-bg img{opacity:.28;object-position:50% 50%;mask-image:linear-gradient(to bottom,#000 40%,transparent);-webkit-mask-image:linear-gradient(to bottom,#000 40%,transparent)}
+  .cnc-hero .wrap{grid-template-columns:1fr}
+  .hero-photo{max-width:none;justify-self:stretch}
+  .hero-photo img{height:clamp(360px,80vw,520px)}
 }
 @media (prefers-reduced-motion:no-preference){
-  .mwd-hero-bg img{animation:bg-in 1.6s ease-out both}
-  @keyframes bg-in{from{opacity:0;transform:scale(1.04)}to{transform:none}}
-  @media (max-width:900px){@keyframes bg-in{from{opacity:0;transform:scale(1.04)}to{opacity:.28;transform:none}}}
+  .hero-photo img{animation:ph-in 1.4s ease-out both}
+  @keyframes ph-in{from{opacity:0;transform:scale(1.03)}to{opacity:1;transform:none}}
 }
 .cred .v{font-size:15px;line-height:1.3}
 
-/* two-up prose */
-.twoup{display:grid;grid-template-columns:1fr 1fr;gap:32px 64px}
-.twoup h3{font-size:clamp(20px,2vw,26px)}
-.twoup p{margin-top:14px;font-size:15px;line-height:1.65;color:var(--slate);max-width:60ch}
-.dark-twoup{margin-top:clamp(40px,5vw,64px)}
-.dark-twoup p{color:var(--steel)}
-@media (max-width:900px){.twoup{grid-template-columns:1fr}}
+/* capability grid */
+.capgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hair-l);border:1px solid var(--hair-l)}
+.capgrid article{background:var(--paper);padding:28px 26px 30px;display:flex;flex-direction:column;gap:14px;min-height:100%}
+.capgrid .idx{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate)}
+.capgrid h3{font-size:21px;line-height:1.15}
+.capgrid p{font-size:14.5px;line-height:1.62;color:var(--slate);margin:0}
+.capgrid ul{list-style:none;margin:auto 0 0;padding:14px 0 0;border-top:1px solid var(--hair-l);display:grid;gap:7px}
+.capgrid li{font-size:13.5px;line-height:1.45;padding-left:16px;position:relative}
+.capgrid li::before{content:"";position:absolute;left:0;top:9px;width:8px;height:2px;background:var(--ink)}
+@media (max-width:1000px){.capgrid{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.capgrid{grid-template-columns:1fr}}
 
-/* family index */
-.families{margin-top:clamp(48px,6vw,80px);display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--hair-l);border:1px solid var(--hair-l)}
-.families a{background:var(--paper);padding:22px 20px 24px;display:grid;gap:6px;transition:background .2s}
-.families a:hover{background:var(--mist)}
-.families a:last-child{grid-column:span 2}
-@media (max-width:480px){.families a:last-child{grid-column:auto}}
-.families .mono{color:var(--slate)}
-.families b{font-family:var(--display);font-stretch:112.5%;font-weight:600;font-size:16px;line-height:1.2}
-.families i{font-style:normal;font-size:13px;color:var(--slate);line-height:1.45}
-@media (max-width:1000px){.families{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:480px){.families{grid-template-columns:1fr}}
-
-/* family sections */
-.fam{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:40px 72px;align-items:start}
-.fam h2{font-size:clamp(28px,3.6vw,48px)}
-.fam .intro-d,.fam .intro{margin-top:22px}
-.light .fam .intro{color:var(--slate);line-height:1.65;font-size:clamp(16px,1.25vw,18px);max-width:56ch}
-@media (max-width:900px){.fam{grid-template-columns:1fr}}
-.parts{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 24px}
-.parts li{font-size:14.5px;padding-left:18px;position:relative;line-height:1.4}
-.parts li::before{content:"";position:absolute;left:0;top:9px;width:9px;height:2px;background:var(--paper)}
-.light .parts li::before,.light-parts li::before{background:var(--ink)}
-.inline-parts{grid-template-columns:repeat(3,1fr)}
-@media (max-width:600px){.parts{grid-template-columns:1fr}.inline-parts{grid-template-columns:1fr 1fr}}
+/* materials rail */
+.materials{margin-top:clamp(40px,5vw,64px);display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:24px 64px;align-items:start;padding-top:clamp(28px,3vw,40px);border-top:1px solid var(--hair-l)}
+.materials h3{font-size:clamp(22px,2.4vw,30px)}
+.materials p{margin-top:12px;font-size:15px;line-height:1.65;color:var(--slate);max-width:56ch}
+.mat-row{display:flex;flex-wrap:wrap;gap:1px;background:var(--hair-l);border:1px solid var(--hair-l)}
+.mat-row span{background:var(--paper);padding:12px 18px;font-family:var(--display);font-stretch:112.5%;font-weight:600;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;flex:1 0 auto;text-align:center}
+.mat-note{margin-top:14px;font-size:13px;color:var(--slate);line-height:1.55}
+@media (max-width:900px){.materials{grid-template-columns:1fr}}
 
 /* photography */
 figure{margin:0}
@@ -350,42 +340,73 @@ figcaption{margin-top:12px;font-size:13px;color:var(--steel);line-height:1.5}
 figcaption .mono{color:var(--paper);margin-right:10px}
 .light figcaption{color:var(--slate)}
 .light figcaption .mono{color:var(--ink)}
-.feature{margin-bottom:clamp(40px,5vw,64px)}
-.feature img{width:100%;height:auto;display:block;border:1px solid var(--hair-d)}
-.trio{margin-top:clamp(40px,5vw,64px);display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);grid-template-rows:auto auto;gap:24px}
-.trio figure:first-child{grid-row:1/3}
-.trio img{width:100%;height:100%;object-fit:cover;display:block;border:1px solid var(--hair-d)}
-.trio figure:not(:first-child) img{height:auto;aspect-ratio:16/7}
-.trio figure{display:flex;flex-direction:column}
-.trio figure img{flex:1;min-height:0}
-@media (max-width:900px){.trio{grid-template-columns:1fr}.trio figure:first-child{grid-row:auto}.trio figure img{aspect-ratio:16/10;height:auto}}
+.banner{margin-bottom:24px}
+.banner img{width:100%;height:auto;display:block;border:1px solid var(--hair-d);aspect-ratio:3/1;object-fit:cover;object-position:50% 50%}
+.mosaic{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);grid-template-rows:auto auto;gap:24px}
+.mosaic>figure:first-child{grid-row:1/3;display:flex;flex-direction:column}
+.mosaic>figure:first-child img{flex:1;min-height:0;height:100%}
+.mosaic img{width:100%;display:block;object-fit:cover;border:1px solid var(--hair-d)}
+.mosaic .wide img{height:auto;aspect-ratio:16/9;object-position:50% 45%}
+.mosaic .pair{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.mosaic .pair img{height:auto;aspect-ratio:1}
+@media (max-width:900px){
+  .mosaic{grid-template-columns:1fr}
+  .mosaic>figure:first-child{grid-row:auto}
+  .mosaic>figure:first-child img{height:auto;aspect-ratio:4/5}
+  .mosaic .pair img{aspect-ratio:4/3}
+}
+@media (max-width:520px){.mosaic .pair{grid-template-columns:1fr}.banner img{aspect-ratio:16/9}}
+.fac-note{margin-top:clamp(40px,5vw,64px);display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hair-d);border:1px solid var(--hair-d)}
+.fac-note>div{background:var(--graphite);padding:22px 24px}
+.fac-note .k{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--steel-2)}
+.fac-note .v{margin-top:8px;font-size:14.5px;line-height:1.6;color:var(--steel)}
+.fac-note .v b{color:var(--paper);font-weight:600}
+@media (max-width:800px){.fac-note{grid-template-columns:1fr}}
 
-.spear{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:40px 72px;align-items:center}
-.spear img{width:100%;max-width:420px;height:auto;display:block;border:1px solid var(--hair-l)}
-.spear h2{font-size:clamp(28px,3.6vw,48px)}
-.spear .intro{margin-top:22px;color:var(--slate);line-height:1.65;font-size:clamp(16px,1.25vw,18px);max-width:56ch}
-@media (max-width:900px){.spear{grid-template-columns:1fr}.spear img{max-width:260px}}
+/* quality */
+.qgrid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px 72px;align-items:start}
+.qgrid h2{font-size:clamp(28px,3.6vw,48px)}
+.qgrid .intro{margin-top:22px;color:var(--slate);line-height:1.65;font-size:clamp(16px,1.25vw,18px);max-width:56ch}
+.qlist{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--hair-l);border:1px solid var(--hair-l)}
+.qlist div{background:var(--paper);padding:20px 22px}
+.qlist b{display:block;font-family:var(--display);font-stretch:112.5%;font-weight:600;font-size:15px;line-height:1.25}
+.qlist span{display:block;margin-top:8px;font-size:13.5px;line-height:1.55;color:var(--slate)}
+@media (max-width:900px){.qgrid{grid-template-columns:1fr}}
+@media (max-width:560px){.qlist{grid-template-columns:1fr}}
+.qphoto{margin-top:clamp(40px,5vw,64px);display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:24px 64px;align-items:center}
+.qphoto img{width:100%;height:auto;display:block;border:1px solid var(--hair-l);aspect-ratio:16/10;object-fit:cover}
+.qphoto p{font-size:15px;line-height:1.65;color:var(--slate);max-width:48ch}
+.qphoto p+p{margin-top:12px}
+@media (max-width:900px){.qphoto{grid-template-columns:1fr}}
 
-.housings{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.housings img{width:100%;height:auto;display:block;border:1px solid var(--hair-d);aspect-ratio:16/8;object-fit:cover}
-@media (max-width:700px){.housings{grid-template-columns:1fr}}
-.alloys{margin-top:24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;border:1px solid var(--hair-d);padding:16px 20px}
-.alloys .mono{color:var(--steel-2)}
-.alloy-row{display:flex;gap:1px;background:var(--hair-d);border:1px solid var(--hair-d)}
-.alloy-row span{background:var(--ink);padding:8px 16px;font-family:var(--display);font-stretch:112.5%;font-weight:600;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+/* secondary services on dark */
+.turnkey-d{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px 72px;align-items:start}
+.turnkey-d h2{font-size:clamp(28px,3.6vw,48px)}
+.turnkey-d .intro-d{margin-top:22px}
+.turnkey-d .intro-d+.intro-d{margin-top:14px}
+.svc-dark{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--hair-d);border:1px solid var(--hair-d)}
+.svc-dark li{background:var(--graphite);padding:14px 16px;min-height:64px;display:flex;align-items:center;font-family:var(--display);font-stretch:112.5%;font-weight:600;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;line-height:1.3}
+.svc-dark li.wide{grid-column:span 2;background:var(--ink);color:var(--steel);text-transform:none;letter-spacing:0;font-weight:500;font-family:var(--body);font-size:13.5px}
+@media (max-width:900px){.turnkey-d{grid-template-columns:1fr}}
+@media (max-width:700px){.svc-dark{grid-template-columns:repeat(2,1fr)}}
 
-.callout{margin-top:clamp(40px,5vw,64px);border:1px solid var(--hair-d);background:var(--graphite);padding:28px 28px;display:grid;grid-template-columns:1fr auto;gap:20px 40px;align-items:center}
-.callout p{font-size:16px;line-height:1.6;color:var(--steel);max-width:60ch}
-.callout b{color:var(--paper);font-weight:600}
-@media (max-width:800px){.callout{grid-template-columns:1fr}}
-
-/* welds */
-.welds-head{margin-top:clamp(48px,6vw,80px);display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:16px 64px;align-items:start;padding-top:clamp(28px,3vw,40px);border-top:1px solid var(--hair-d)}
-.welds-head h3{font-size:clamp(24px,2.8vw,36px)}
-.welds-head p{color:var(--steel);font-size:15.5px;line-height:1.65;max-width:62ch}
-.welds{margin-top:28px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.welds img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;display:block;border:1px solid var(--hair-d)}
-@media (max-width:900px){.welds-head{grid-template-columns:1fr}.welds{grid-template-columns:1fr}.welds img{aspect-ratio:4/3}}
+/* how we work */
+.ways{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--hair-l)}
+.ways article{padding:28px 24px 8px 0;border-top:3px solid var(--ink);margin-top:-1px;margin-right:24px}
+.ways article:last-child{margin-right:0}
+.ways h3{font-size:20px;margin-bottom:12px}
+.ways p{font-size:14.5px;color:var(--slate);line-height:1.6}
+@media (max-width:900px){.ways{grid-template-columns:1fr}.ways article{margin-right:0}}
+.send{margin-top:clamp(40px,5vw,64px);border:1px solid var(--hair-l);display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:0}
+.send>div{padding:28px 30px}
+.send>div:first-child{border-right:1px solid var(--hair-l);background:var(--mist)}
+.send h3{font-size:22px}
+.send p{margin-top:12px;font-size:14.5px;line-height:1.6;color:var(--slate)}
+.send ol{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px 32px;counter-reset:s}
+.send li{counter-increment:s;font-size:14.5px;line-height:1.5;padding-left:34px;position:relative}
+.send li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:2px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--slate)}
+@media (max-width:900px){.send{grid-template-columns:1fr}.send>div:first-child{border-right:0;border-bottom:1px solid var(--hair-l)}}
+@media (max-width:560px){.send ol{grid-template-columns:1fr}}
 
 /* request on dark */
 #request .contact-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px 80px;align-items:start}
@@ -404,34 +425,6 @@ figcaption .mono{color:var(--paper);margin-right:10px}
 .dark-form button{background:var(--paper);color:var(--ink);border-color:var(--paper)}
 .dark-form button:hover{background:var(--ink);color:var(--paper)}
 @media (max-width:900px){#request .contact-grid{grid-template-columns:1fr}}
-
-#housings .head h2,#muleshoe .head h2{font-size:clamp(28px,3.6vw,48px)}
-#running-gear .svc-list{grid-template-columns:repeat(3,1fr)}
-@media (max-width:600px){#running-gear .svc-list{grid-template-columns:1fr 1fr}}
-
-
-
-/* running gear: uniform tiles */
-#running-gear .svc-list li{min-height:64px;display:flex;align-items:center}
-
-/* ghost word: the section motif */
-.section{overflow:hidden}
-.ghost{font-family:var(--display);font-stretch:112.5%;font-weight:700;font-size:clamp(56px,10.5vw,156px);line-height:.9;letter-spacing:-.02em;color:transparent;-webkit-text-stroke:1.5px #34393E;white-space:nowrap;user-select:none;margin:-.1em 0 clamp(20px,3vw,40px) -.03em}
-.ghost-light{-webkit-text-stroke:1.5px #C9CED3}
-@media (max-width:600px){.ghost{font-size:16vw;white-space:normal;line-height:.95}}
-
-/* muleshoe head with the part standing in it */
-.ms-head{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:40px 48px;align-items:start}
-.ms-head h2{font-size:clamp(28px,3.6vw,48px)}
-.ms-part{margin:0;justify-self:start;width:min(100%,150px);margin-top:calc(-1 * clamp(110px,15vw,230px));margin-left:clamp(24px,5vw,72px);position:relative;z-index:2}
-.ms-part img{width:100%;height:auto;display:block;filter:drop-shadow(0 34px 44px rgba(0,0,0,.9)) drop-shadow(-14px 10px 14px rgba(0,0,0,.7))}
-.ms-part figcaption{text-align:center;margin-top:16px}
-@media (max-width:900px){.ms-head{grid-template-columns:1fr}.ms-part{justify-self:start;width:min(100%,110px);margin-top:0;margin-left:0}.ms-part figcaption{text-align:left}}
-
-.strip-photo img{aspect-ratio:16/5;object-fit:cover;object-position:50% 45%;height:auto}
-.ghost-sm{font-size:clamp(34px,5.6vw,84px);margin:clamp(48px,6vw,80px) 0 0 -.03em;padding-top:clamp(28px,3vw,40px);border-top:1px solid var(--hair-d)}
-.ghost-sm + .welds-head{margin-top:0;padding-top:0;border-top:0}
-#muleshoe .ghost:first-child{position:relative;z-index:1}
 </style>
 
 </head>
@@ -458,8 +451,8 @@ figcaption .mono{color:var(--paper);margin-right:10px}
     <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="links">Menu</button>
     <nav class="links" id="links" aria-label="Primary">
       <a href="index.html#capabilities">Capabilities</a>
-      <a href="cnc.html">CNC Machining</a>
-      <a href="mwd.html" aria-current="page" class="current">MWD Components</a>
+      <a href="cnc.html" aria-current="page" class="current">CNC Machining</a>
+      <a href="mwd.html">MWD Components</a>
       <a href="centralizers.html">Centralizers</a>
       <a href="index.html#industries">Industries</a>
       <a href="index.html#about">About</a>
@@ -471,297 +464,267 @@ figcaption .mono{color:var(--paper);margin-right:10px}
 <main id="top">
 
 <!-- ================= HERO ================= -->
-<section class="hero mwd-hero">
-  <div class="mwd-hero-bg" aria-hidden="true"><img src="img-mwd-hero.jpg" alt="" width="1024" height="861"></div>
+<section class="hero cnc-hero">
   <div class="wrap">
     <div>
-      <div class="eyebrow">MWD Components &nbsp;·&nbsp; Stocked &nbsp;·&nbsp; Repeat production &nbsp;·&nbsp; Made to print &nbsp;·&nbsp; Repaired in-house</div>
-      <h1>On the shelf.<br>On the machine.<br><em>Understood.</em></h1>
-      <p class="lede"><b>We manufacture and stock the mechanical components that keep MWD tools assembled, serviced, and ready to run.</b> Lower-end and pulser parts, interconnects, pressure housings, spearpoints, muleshoe components, centralizers, running gear. We know how they fit together, and what it costs a customer when one of them isn't available.</p>
+      <div class="eyebrow">CNC Machining &nbsp;·&nbsp; Multi-axis &nbsp;·&nbsp; Robotic tending &nbsp;·&nbsp; Difficult materials &nbsp;·&nbsp; Cypress, Texas</div>
+      <h1>Multi-axis machining<br>for parts that<br><em>can't be wrong.</em></h1>
+      <p class="lede"><b>Fifty X Technology is a precision CNC machining manufacturer built around complex, tight-tolerance components in demanding materials.</b> We engineer the complete process in-house, from print review and workholding through machining, secondary operations, and documented inspection, and we ship finished parts under one accountable name.</p>
       <div class="actions">
-        <a class="btn btn-solid" href="#request">Check availability <svg><use href="#arrow"/></svg></a>
-        <a class="btn btn-ghost" href="#families">Component families <svg><use href="#arrow"/></svg></a>
+        <a class="btn btn-solid" href="#request">Request a quote <svg><use href="#arrow"/></svg></a>
+        <a class="btn btn-ghost" href="#facility">See the facility <svg><use href="#arrow"/></svg></a>
       </div>
     </div>
-    <div></div>
+    <figure class="hero-photo">
+      <img src="img-cnc-hero.jpg" alt="Collaborative robot arm above a batch of freshly machined copper-alloy components" width="1600" height="2101">
+      <figcaption><span>Robotic tending cell</span><span>Copper-alloy components, as machined</span></figcaption>
+    </figure>
   </div>
 </section>
 
 <div class="cred">
   <div class="wrap">
-    <div class="cell"><div class="k">Stocked</div><div class="v">Common configurations, ready for immediate or short-notice release</div></div>
-    <div class="cell"><div class="k">Repeat production</div><div class="v">Established parts with proven programs, tooling, and inspection history</div></div>
-    <div class="cell"><div class="k">Made to order</div><div class="v">Standard or proprietary components to a confirmed configuration</div></div>
-    <div class="cell"><div class="k">Repaired in-house</div><div class="v">Housing recuts and muleshoe rebuilds, inspected and re-marked</div></div>
+    <div class="cell"><div class="k">Turning &amp; milling</div><div class="v">Multi-axis, live-tool, and sub-spindle work completed in fewer setups</div></div>
+    <div class="cell"><div class="k">Robotic tending</div><div class="v">Automated cells that keep repeat work running consistently, shift after shift</div></div>
+    <div class="cell"><div class="k">Materials</div><div class="v">Non-magnetic stainless, nickel and copper alloys, tool steels, and more</div></div>
+    <div class="cell"><div class="k">Inspection</div><div class="v">Dedicated inspection room, documented results, ISO 9001:2015 compliant QMS</div></div>
   </div>
 </div>
 
-<!-- ================= POSITIONING ================= -->
-<section class="section light" id="why">
+<!-- ================= CAPABILITIES ================= -->
+<section class="section light" id="capabilities">
   <div class="wrap">
+    <div class="ghost ghost-light" aria-hidden="true">CAPABILITY</div>
     <div class="head">
       <div>
-        <div class="eyebrow">Why it matters</div>
-        <h2 style="margin-top:14px">More than a machine shop that happens to make MWD parts.</h2>
+        <div class="eyebrow">What we do</div>
+        <h2 style="margin-top:14px">Built for the parts other shops decline.</h2>
       </div>
-      <div>
-        <p class="intro">An MWD tool contains dozens of mechanical components that have to work together downhole. Some are large and obvious. Others are small internal pieces that shut down the whole tool when they are worn, damaged, or on backorder.</p>
-        <p class="intro" style="margin-top:14px">Most of them are not one-off inventions. The industry has settled on established part families around common tool configurations, and those families get replaced constantly as tools are built, repaired, and returned to service. That makes availability as important as capability. We are structured for both.</p>
-      </div>
+      <p class="intro">Our machining discipline was developed on components that operate thousands of feet underground, where a sealing surface, thread, or bore that is almost right is a failure. That standard now serves buyers in aerospace, defense, energy, and industrial markets who need a manufacturer that can take a difficult print and own it end to end.</p>
     </div>
 
-    <div class="twoup">
-      <div>
-        <h3>Repeat parts run like repeat parts.</h3>
-        <p>Programs, tooling, fixturing, inspection plans, and setup sheets stay on file for every component we have made. When your reorder comes in, it goes to the machine, not back to engineering. That is what lets common families sit on the shelf, and what keeps your variation in material, connection, port, or length from turning into a project.</p>
-      </div>
-      <div>
-        <h3>Find the family. Confirm the variation. Keep the tool moving.</h3>
-        <p>This page is not a claim that every part fits every tool. It exists so you can identify the component family you need and start a technical conversation without explaining the whole assembly from scratch. We work from a part number, a customer print, a prior order, a physical sample, a photo, a marked-up drawing, or a description of where the part lives. When the exact configuration is unclear, we pin down the critical details before anything reaches the machine.</p>
-      </div>
+    <div class="capgrid">
+      <article>
+        <div class="idx">01 &nbsp; Turning</div>
+        <h3>Multi-axis turning and mill-turn</h3>
+        <p>Turning centers with live tooling and sub-spindle capability complete the front and back of a part in one handling. Fewer setups mean tighter concentricity, better repeatability, and less opportunity for error on complex turned components.</p>
+        <ul><li>Long, slender, and thin-walled turned parts</li><li>Cross-holes, flats, and milled features in the same setup</li><li>Precision threads, bores, and sealing surfaces</li></ul>
+      </article>
+      <article>
+        <div class="idx">02 &nbsp; Milling</div>
+        <h3>Precision milling</h3>
+        <p>Multi-axis milling for prismatic components, housings, fixtures, and detail work where flatness, position, and surface finish are called out and inspected. Programmed, fixtured, and proven in-house before production begins.</p>
+        <ul><li>Tight-tolerance pockets, bores, and datum structures</li><li>Complex contours and compound angles</li><li>Fixture design and workholding built here</li></ul>
+      </article>
+      <article>
+        <div class="idx">03 &nbsp; Automation</div>
+        <h3>Robotic machine tending</h3>
+        <p>Collaborative robots load, unload, and stage parts so spindles keep cutting through unattended hours. For repeat production, that translates into consistent cycle-to-cycle quality, predictable capacity, and delivery dates we can commit to.</p>
+        <ul><li>Lights-out and extended-shift production</li><li>Stable pricing on established part numbers</li><li>Capacity that scales with your release schedule</li></ul>
+      </article>
+      <article>
+        <div class="idx">04 &nbsp; Materials</div>
+        <h3>Difficult materials, done routinely</h3>
+        <p>Work-hardening stainless, gummy copper alloys, and tough nickel alloys behave differently at the cutting edge. We select tooling, speeds, coolant, and workholding for the material, not for the catalog, and we hold that recipe once it is proven.</p>
+        <ul><li>Non-magnetic and austenitic stainless steels</li><li>Beryllium copper and other high-strength copper alloys</li><li>Nickel-based alloys, alloy and tool steels, aluminum</li></ul>
+      </article>
+      <article>
+        <div class="idx">05 &nbsp; Engineering</div>
+        <h3>Process engineering</h3>
+        <p>Every job starts with a print review and a manufacturing plan: tooling, workholding, sequence, inspection points, and secondary operations. Programming and prove-out happen on our floor, so first articles arrive with a process behind them, not a guess.</p>
+        <ul><li>Design-for-manufacturability feedback before you commit</li><li>Documented first-article inspection</li><li>Locked process for repeat releases</li></ul>
+      </article>
+      <article>
+        <div class="idx">06 &nbsp; Finishing</div>
+        <h3>Finished, not just machined</h3>
+        <p>Heat treat, plating, coatings, marking, and assembly are managed through vendors we have qualified and hold accountable. You issue one purchase order and receive one finished, inspected, certified part, with the paperwork to match.</p>
+        <ul><li>Secondary operations coordinated and inspected on return</li><li>Certifications and traceability assembled in one package</li><li>See the full list of managed services below</li></ul>
+      </article>
     </div>
 
-    <nav class="families" id="families" aria-label="Component families">
-      <a href="#lower-end"><span class="mono">01</span><b>Lower-end &amp; pulser</b><i>Helixes, poppet housings, piston caps, signal-valve shafts</i></a>
-      <a href="#interconnect"><span class="mono">02</span><b>Interconnect</b><i>Shafts, snubbers, threaded rings, intermodules</i></a>
-      <a href="#spearpoint"><span class="mono">03</span><b>Spearpoint &amp; top-end</b><i>Complete and integrated spearpoints, shafts</i></a>
-      <a href="#housings"><span class="mono">04</span><b>Pressure housings</b><i>New manufacturing and precision recuts</i></a>
-      <a href="#muleshoe"><span class="mono">05</span><b>Muleshoes</b><i>New components, sleeve repair and rebuild</i></a>
-      <a href="#running-gear"><span class="mono">06</span><b>Surface &amp; running gear</b><i>Weight bars, overshots, stands, tools</i></a>
-      <a href="centralizers.html"><span class="mono">→</span><b>Centralizers</b><i>Dedicated page: new, remold, HyperHeat™, color</i></a>
-    </nav>
+    <div class="materials">
+      <div>
+        <h3>Materials we run</h3>
+        <p>A representative list, not a limit. If your print calls for something else, send it. We will tell you plainly whether it is a fit.</p>
+      </div>
+      <div>
+        <div class="mat-row" aria-label="Materials">
+          <span>Beryllium copper</span><span>ToughMet</span><span>Nitronic &amp; non-magnetic stainless</span><span>300 &amp; 400 series stainless</span><span>17-4 PH</span><span>Inconel &amp; nickel alloys</span><span>4140 &amp; 4340</span><span>Tool steels</span><span>Aluminum</span><span>Brass &amp; bronze</span><span>Engineering plastics</span>
+        </div>
+        <p class="mat-note">Material certifications are retained by heat and lot and travel with the part. Customer-supplied material is welcome and tracked the same way.</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<div class="plates"></div>
-
-<!-- ================= LOWER END ================= -->
-<section class="section" id="lower-end">
+<!-- ================= FACILITY ================= -->
+<section class="section" id="facility">
   <div class="wrap">
-    <div class="ghost" aria-hidden="true">LOWER ENDS</div>
-    <div class="fam">
+    <div class="ghost" aria-hidden="true">FACILITY</div>
+    <div class="head">
       <div>
-        <div class="eyebrow">01 &nbsp;·&nbsp; Lower-end &amp; pulser components</div>
-        <h2 style="margin-top:14px">Flow control, pulse generation, actuation, alignment, wear.</h2>
-        <p class="intro-d">Mechanical components supporting everything the lower-end assembly has to do, machined in the non-magnetic and high-strength alloys the application calls for, held to prints that leave no room for interpretation.</p>
+        <div class="eyebrow">The floor</div>
+        <h2 style="margin-top:14px">Clean floor.<br>Clear standard.</h2>
       </div>
-      <div>
-        <div class="mono lbl">Representative components</div>
-        <ul class="parts">
-          <li>Pulser helixes</li><li>Poppet housings</li><li>Poppet bolts</li><li>Signal-valve shafts</li><li>Piston caps</li><li>Abrasion rings</li><li>Related lower-end hardware</li>
-        </ul>
-        <p class="fine-d">Stocked and repeat-production families expand continually with customer demand. Availability of any configuration is confirmed by our team.</p>
-      </div>
+      <p class="intro">A machine shop tells you who it is before anyone speaks. Ours is organized, lit, and laid out so parts move in one direction, from saw to spindle to inspection to the dock, with nothing waiting on a forklift or a favor.</p>
     </div>
-    <figure class="feature strip-photo" style="margin:clamp(40px,5vw,64px) 0 0">
-      <img src="img-mwd-hardware.jpg" alt="Rows of machined threaded lower-end hardware" width="1536" height="973">
-      <figcaption><span class="mono">In stock</span> Standard component, machined in quantity and on the shelf.</figcaption>
+
+    <figure class="banner">
+      <img src="img-cnc-aisle.jpg" alt="Main aisle of the Fifty X machining floor with turning and milling centers on both sides" width="1536" height="505">
+      <figcaption><span class="mono">01</span>Main aisle. Turning and milling centers on both sides, staged work at each machine, polished floor kept clear end to end.</figcaption>
     </figure>
-  </div>
-</section>
 
-<div class="slit"></div>
-
-<!-- ================= INTERCONNECT ================= -->
-<section class="section" id="interconnect">
-  <div class="wrap">
-    <div class="ghost" aria-hidden="true">INTERCONNECTS</div>
-    <div class="fam">
-      <div>
-        <div class="eyebrow">02 &nbsp;·&nbsp; Interconnect components</div>
-        <h2 style="margin-top:14px">Connect, support, isolate, protect.</h2>
-        <p class="intro-d">The components that carry battery and electronics sections through the assembly and keep them isolated from what the hole is doing. Machined, molded, and bonded here, which is why we can build and deliver the complete assembly, not just the pieces.</p>
-        <a class="btn btn-ghost" style="margin-top:24px" href="centralizers.html">Centralizers: dedicated page <svg><use href="#arrow"/></svg></a>
-      </div>
-      <div>
-        <div class="mono lbl">Our offering includes</div>
-        <ul class="parts">
-          <li>Interconnect shafts</li><li>Integrated interconnect shafts</li><li>Interconnect housings</li><li>Battery snubbers</li><li>Electronics snubbers</li><li>Threaded rings</li><li>Split rings</li><li>Intermodule ends</li><li>Battery intermodules</li><li>Bulkhead retainers</li><li>Centralizers</li>
-        </ul>
+    <div class="mosaic">
+      <figure>
+        <img src="img-cnc-robot-2.jpg" alt="Collaborative robot staging machined copper-alloy parts on a fixture table" width="1400" height="1797">
+        <figcaption><span class="mono">02</span>Robotic tending. A collaborative robot stages finished parts and reloads the machine, keeping repeat work running through unattended hours.</figcaption>
+      </figure>
+      <figure class="wide">
+        <img src="img-cnc-lathe.jpg" alt="Multi-axis turning center with door open showing the chuck and turret, control pendant at right" width="1500" height="1071">
+        <figcaption><span class="mono">03</span>Multi-axis turning center. Live tooling and sub-spindle work complete complex turned parts in a single handling.</figcaption>
+      </figure>
+      <div class="pair">
+        <figure>
+          <img src="img-cnc-shop.jpg" alt="Assembly and staging bay under hexagonal LED lighting with a guarded robot cell behind" width="1400" height="1400">
+          <figcaption><span class="mono">04</span>Staging and assembly bay. Guarded automation cell beyond.</figcaption>
+        </figure>
+        <figure>
+          <img src="img-cnc-qc.jpg" alt="Inspection room with granite surface plate, height gauge, and measurement equipment" width="1090" height="690">
+          <figcaption><span class="mono">05</span>Inspection room. Granite surface plate, height gauge, and measurement equipment, separate from the production floor.</figcaption>
+        </figure>
       </div>
     </div>
-    <div class="trio">
-      <figure><img src="img-mwd-snubbers.jpg" alt="Rows of machined intermodule ends in stock" width="1024" height="1229"><figcaption><span class="mono">In stock</span> Intermodule ends, machined in quantity and on the shelf.</figcaption></figure>
-      <figure><img src="img-mwd-shaft-becu.jpg" alt="Beryllium copper interconnect shaft" width="1536" height="666"><figcaption><span class="mono">BeCu</span> Interconnect shaft, beryllium copper.</figcaption></figure>
-      <figure><img src="img-mwd-shaft-n50.jpg" alt="ToughMet 3 interconnect shaft" width="1536" height="666"><figcaption><span class="mono">ToughMet 3</span> Same shaft, ToughMet 3.</figcaption></figure>
-    </div>
-  </div>
-</section>
 
-<div class="plates"></div>
-
-<!-- ================= SPEARPOINT ================= -->
-<section class="section light" id="spearpoint">
-  <div class="wrap">
-    <div class="ghost ghost-light" aria-hidden="true">SPEARPOINTS</div>
-    <div class="spear">
-      <figure><img src="img-mwd-spearpoints.jpg" alt="Nine machined MWD spearpoints standing in formation" width="1015" height="1400"><figcaption><span class="mono">Spearpoints</span> Standard and integrated configurations, machined complete.</figcaption></figure>
-      <div>
-        <div class="eyebrow">03 &nbsp;·&nbsp; Spearpoint &amp; top-end components</div>
-        <h2 style="margin-top:14px">Retrieval you don't have to think about.</h2>
-        <p class="intro">Standard and integrated spearpoint components manufactured for dependable retrieval, alignment, and top-end assembly performance.</p>
-        <div class="mono lbl" style="margin-top:28px">Available configurations</div>
-        <ul class="parts light-parts">
-          <li>Complete spearpoints</li><li>Integrated spearpoint designs</li><li>Replacement shafts</li><li>Customer-specific top-end components to tool requirements</li>
-        </ul>
-      </div>
+    <div class="fac-note">
+      <div><div class="k">Organization</div><div class="v"><b>Every tool, fixture, and gauge has a home.</b> Setups are staged before the machine opens, so spindle time is spent cutting.</div></div>
+      <div><div class="k">Flow</div><div class="v"><b>Raw material in one door, finished parts out the other.</b> Work moves in sequence with a traveler that tells you where it has been.</div></div>
+      <div><div class="k">Capacity</div><div class="v"><b>Automation extends the shift, not the headcount.</b> Repeat work runs unattended so people are available for the difficult jobs.</div></div>
     </div>
   </div>
 </section>
 
 <div class="plates"></div>
 
-<!-- ================= PRESSURE HOUSINGS ================= -->
-<section class="section" id="housings">
+<!-- ================= QUALITY ================= -->
+<section class="section light" id="quality">
   <div class="wrap">
-    <div class="ghost" aria-hidden="true">HOUSINGS</div>
+    <div class="qgrid">
+      <div>
+        <div class="eyebrow">Quality</div>
+        <h2 style="margin-top:14px">Inspected. Documented. Traceable.</h2>
+        <p class="intro">Our quality system is the reason a buyer who has never visited Cypress can put a purchase order against us with confidence. Inspection is planned into the process, performed in a dedicated room, and recorded so the paperwork tells the same story the part does.</p>
+      </div>
+      <div class="qlist">
+        <div><b>ISO 9001:2015 compliant QMS</b><span>Documented procedures for order review, process control, inspection, nonconformance, and corrective action.</span></div>
+        <div><b>First-article inspection</b><span>Documented FAI on new part numbers and after any process change, with the report delivered before production continues.</span></div>
+        <div><b>In-process and final inspection</b><span>Planned inspection points during the run and a final inspection against the print before anything is packaged.</span></div>
+        <div><b>Material and process traceability</b><span>Heat and lot numbers, secondary-process certifications, and certificates of conformance retained and supplied on request.</span></div>
+        <div><b>Controlled data handling</b><span>Customer prints and proprietary designs are reviewed confidentially and never published. ITAR-controlled data is handled only after a supplier NDA is in place.</span></div>
+        <div><b>Government and defense ready</b><span>CAGE 8JPP2 &nbsp;·&nbsp; UEI DP8BSDC81GC3 &nbsp;·&nbsp; SAM registered &nbsp;·&nbsp; JCP certified (DD Form 2345).</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECONDARY SERVICES ================= -->
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="ghost" aria-hidden="true">FINISHED</div>
+    <div class="turnkey-d">
+      <div>
+        <div class="eyebrow">Turnkey through to finish</div>
+        <h2 style="margin-top:14px">One PO.<br>A finished part.</h2>
+        <p class="intro-d">Machining is rarely the last step. Heat treat, plating, coatings, and other secondary operations run through a curated network of vendors we have qualified and manage ourselves.</p>
+        <p class="intro-d">We schedule them, ship them, inspect the parts when they return, and assemble the certifications into one package. You place one order and receive one finished, inspected, certified part.</p>
+      </div>
+      <ul class="svc-dark" aria-label="Secondary services managed by Fifty X">
+        <li>Heat treatment</li><li>Passivation</li><li>Anodizing</li><li>Plating</li><li>Phosphate coating</li><li>Chemical conversion coating</li><li>Black oxide</li><li>Powder coating</li><li>Painting</li><li>Surface treatment</li><li>Grinding</li><li>Honing</li><li>Welding</li><li>Assembly</li><li>Laser marking</li><li>Engraving</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="plates"></div>
+
+<!-- ================= HOW WE WORK ================= -->
+<section class="section light" id="how">
+  <div class="wrap">
     <div class="head">
       <div>
-        <div class="eyebrow">04 &nbsp;·&nbsp; Pressure housings</div>
-        <h2 style="margin-top:14px">New manufacturing.<br>Precision recuts.</h2>
+        <div class="eyebrow">How we work</div>
+        <h2 style="margin-top:14px">A second source that behaves like a first.</h2>
       </div>
-      <p class="intro-d">We manufacture new MWD pressure housings and barrels in common, legacy, and customer-specific configurations, and we recut worn or damaged housings to restore critical connections and put otherwise usable components back in service.</p>
+      <p class="intro">Whether you are qualifying a new supplier, moving work off an overloaded shop, or looking for a domestic manufacturer you can actually reach on the phone, the engagement is the same: a clear quote, a proven process, and a delivery date we treat as a promise.</p>
     </div>
 
-    <div class="housings">
-      <figure><img src="img-mwd-housing-becu.jpg" alt="Seven beryllium copper pressure housings" width="1600" height="739"><figcaption><span class="mono">BeCu</span> Beryllium copper housings.</figcaption></figure>
-      <figure><img src="img-mwd-housing-n50.jpg" alt="Five Nitronic 50 pressure housings" width="1600" height="900"><figcaption><span class="mono">Nitronic 50</span> Non-magnetic stainless housings.</figcaption></figure>
-    </div>
-    <div class="alloys" aria-label="Alloys in stock">
-      <div class="mono">Three alloys, stocked and ready to machine</div>
-      <div class="alloy-row"><span>BeCu</span><span>Nitronic 50</span><span>ToughMet 3</span></div>
+    <div class="ways">
+      <article>
+        <h3>Prototype and first article</h3>
+        <p>One to a few pieces, built with production intent. We review the print for manufacturability, build the process once, and deliver a first article with documentation so the transition to production is a release, not a restart.</p>
+      </article>
+      <article>
+        <h3>Repeat production</h3>
+        <p>Established part numbers with locked programs, fixtures, and inspection plans. Blanket orders, scheduled releases, and stocking agreements are welcome. Automation keeps pricing and lead times stable as volume grows.</p>
+      </article>
+      <article>
+        <h3>Made to print</h3>
+        <p>Your drawing, your specification, your revision control. We manufacture to the print, hold the certifications, and treat your design as confidential. Customer-supplied material and outside-processed parts are handled the same way.</p>
+      </article>
     </div>
 
-    <div class="twoup dark-twoup">
+    <div class="send">
       <div>
-        <h3>New pressure housings</h3>
-        <p>Gamma, battery, directional-module and electronics, pulser-driver, and other housings to customer drawings. Our machining is built for exactly this part: long, thin-wall components with deep bores, demanding runout requirements, tight-tolerance connections, and critical sealing geometry.</p>
-      </div>
-      <div>
-        <h3>Pressure housing recuts</h3>
-        <p>When threads, shoulders, or sealing surfaces are damaged, the whole housing may not need replacing. Send the housing with the applicable drawing and the finished length you need. The damaged section is removed, the complete connection is re-machined to your drawing, critical dimensions are verified, and the housing is permanently re-marked with its updated information.</p>
-        <ul class="parts" style="margin-top:16px">
-          <li>Single-end and double-end recuts</li><li>Removal of worn or damaged connections</li><li>Thread, shoulder, seal, and O-ring feature restoration</li><li>Finished-length and dimensional verification</li><li>Concentricity and runout inspection</li><li>Permanent re-marking and documented final inspection</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="callout">
-      <p><b>Recut or replace: your call, our quote.</b> Send the housing count, drawing, and required finished length and we will quote the recut and a new housing side by side.</p>
-      <a class="btn btn-solid" href="#request">Request a housing quote <svg><use href="#arrow"/></svg></a>
-    </div>
-  </div>
-</section>
-
-<div class="plates"></div>
-
-<!-- ================= MULESHOES ================= -->
-<section class="section" id="muleshoe">
-  <div class="wrap">
-    <div class="ghost" aria-hidden="true">MULESHOES</div>
-    <div class="ms-head">
-      <div>
-        <div class="eyebrow">05 &nbsp;·&nbsp; Muleshoes</div>
-        <h2 style="margin-top:14px">New components.<br>Sleeves rebuilt to print.</h2>
-        <p class="intro-d" style="margin-top:22px">We manufacture new muleshoe components in common medium and large configurations and restore worn assemblies through a controlled repair and rebuild process.</p>
-        <div class="mono lbl" style="margin-top:26px">New components</div>
-        <ul class="parts">
-          <li>Muleshoe sleeves</li><li>Muleshoe keys</li><li>Wear cuffs</li><li>Threaded retainers</li><li>Retention and locking components</li><li>Customer-specific configurations</li>
-        </ul>
-      </div>
-      <figure class="ms-part">
-        <img src="img-mwd-muleshoe-cut.webp" alt="New muleshoe sleeve, machined complete" width="373" height="1380">
-        <figcaption><span class="mono">New muleshoe</span> Machined complete, in stock.</figcaption>
-      </figure>
-    </div>
-
-    <div class="ghost ghost-sm" aria-hidden="true">SLEEVE REPAIR</div>
-    <div class="welds-head">
-      <h3>The welds customers ask about.</h3>
-      <p>Three repair zones on a muleshoe sleeve: the top threads, the bore, and the bottom face. Every one is fully fused, cleaned to parent metal, and re-machined to the applicable dimensions. Nothing is ground to hide anything. Customers who have run tools for twenty years tell us they have not seen sleeves come back like this, and we intend to keep it that way.</p>
-    </div>
-    <div class="welds">
-      <figure><img src="img-mwd-weld-seat.jpg" alt="Welded replacement top threads on a muleshoe sleeve" width="1048" height="1200"><figcaption><span class="mono">Top threads</span> Welded replacement top.</figcaption></figure>
-      <figure><img src="img-mwd-weld-bore.jpg" alt="TIG weld inside the bore of a muleshoe sleeve with keys fitted" width="1034" height="1200"><figcaption><span class="mono">Precision weld</span> Almost as smooth as new.</figcaption></figure>
-      <figure><img src="img-mwd-weld-face.jpg" alt="Bottom face of a muleshoe sleeve built up by welding" width="1200" height="750"><figcaption><span class="mono">Bottom face</span> Built up, ready for the lathe.</figcaption></figure>
-    </div>
-
-    <div class="twoup dark-twoup">
-      <div>
-        <h3>Why the sleeve matters</h3>
-        <p>The muleshoe sleeve supports and seats the MWD probe, establishes its orientation within the UBHO, and carries critical flow and retention components. Wear, washout, damaged seating surfaces, distorted features, and inconsistent prior repairs all affect alignment, sealing, and tool reliability.</p>
+        <h3>What to send for a fast, accurate quote</h3>
+        <p>The more of this we receive up front, the sooner the quote lands and the fewer questions come back.</p>
       </div>
       <div>
-        <h3>Repair and rebuild</h3>
-        <p>Every repair starts with an incoming evaluation of the complete assembly. Depending on condition, the sleeve is disassembled, straightened, welded, re-machined, fitted with replacement components, and restored to the applicable dimensional requirements. Critical profiles, sealing surfaces, alignment features, retention areas, and repaired sections are inspected before release.</p>
-        <ul class="parts" style="margin-top:16px">
-          <li>Incoming evaluation and documented inspection</li><li>Precision welding and dimensional restoration</li><li>Repair of worn, washed, or damaged features</li><li>Replacement of wear cuffs, keys, retainers, and related parts</li><li>Re-machining of sealing, seating, and alignment surfaces</li><li>Final dimensional verification and permanent identification</li>
-        </ul>
+        <ol>
+          <li>Drawing as PDF, plus a STEP or native model when available</li>
+          <li>Material and specification, or a note that we may recommend one</li>
+          <li>Quantity now, and the expected annual usage</li>
+          <li>Required date, and whether a partial release helps</li>
+          <li>Finish, plating, heat treat, and marking requirements</li>
+          <li>Certification and inspection documentation required</li>
+        </ol>
       </div>
     </div>
   </div>
 </section>
-
-<div class="plates"></div>
-
-<!-- ================= RUNNING GEAR ================= -->
-<section class="section light" id="running-gear">
-  <div class="wrap">
-    <div class="ghost ghost-light" aria-hidden="true">RUNNING GEAR</div>
-    <div class="fam">
-      <div>
-        <div class="eyebrow">06 &nbsp;·&nbsp; Surface &amp; running gear</div>
-        <h2 style="margin-top:14px">Assemble, align, deploy, retrieve, service.</h2>
-        <p class="intro">Beyond the downhole components, we manufacture and supply the surface and running gear used to build the tool, handle it, run it, and get it back.</p>
-      </div>
-      <div>
-        <div class="mono lbl">Available equipment</div>
-        <ul class="svc-list">
-          <li>Weight bars</li><li>Spacer bars</li><li>Overshots</li><li>Crossovers</li><li>12" tool stands</li><li>36" tool stands</li><li>Alignment tools</li><li>Knockout tools</li><li>Custom service &amp; handling equipment</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="plates"></div>
 
 <!-- ================= REQUEST ================= -->
 <section class="section" id="request">
   <div class="wrap">
     <div class="contact-grid">
       <div>
-        <div class="eyebrow">One source</div>
-        <h2 style="margin-top:14px">New components. Stocked parts. Repairs.<br>Under one roof.</h2>
-        <p class="intro-d">A common component from inventory, a proprietary part to print, a new pressure housing, or a critical assembly restored: the machining, fabrication, welding, inspection, and repair all happen here. Send the part number, drawing, quantity, or repair details and we will confirm inventory, manufacturing capability, or repair feasibility.</p>
+        <div class="eyebrow">Request a quote</div>
+        <h2 style="margin-top:14px">Send the print.<br>We'll tell you plainly.</h2>
+        <p class="intro-d">Whether it is a fit, what it will cost, and when it will ship. If a feature is going to be difficult, you will hear that before the order is placed, not after.</p>
         <div class="details-d">
           <div><div class="k">Phone</div><div class="v"><a href="tel:+17133008303">713-300-8303</a></div></div>
-          <div><div class="k">Quotes &amp; availability</div><div class="v"><a href="mailto:info@fiftyxtechnology.com">info@fiftyxtechnology.com</a></div></div>
-          <div><div class="k">Ship repairs to</div><div class="v">Fifty X Technology, LLC<br>19615 Juergen Rd., Bldg. 3100<br>Cypress, TX 77433</div></div>
+          <div><div class="k">Quotes</div><div class="v"><a href="mailto:info@fiftyxtechnology.com">info@fiftyxtechnology.com</a></div></div>
+          <div><div class="k">Facility</div><div class="v">Fifty X Technology, LLC<br>19615 Juergen Rd., Bldg. 3100<br>Cypress, TX 77433</div></div>
         </div>
       </div>
-      <form id="mwdform" class="dark-form" novalidate>
-        <label>Name<input id="m-name" type="text" autocomplete="name" required></label>
-        <label>Company<input id="m-company" type="text" autocomplete="organization"></label>
-        <label>Email<input id="m-email" type="email" autocomplete="email" required></label>
-        <label>Phone<input id="m-phone" type="tel" autocomplete="tel"></label>
+      <form id="cncform" class="dark-form" novalidate>
+        <label>Name<input id="c-name" type="text" autocomplete="name" required></label>
+        <label>Company<input id="c-company" type="text" autocomplete="organization"></label>
+        <label>Email<input id="c-email" type="email" autocomplete="email" required></label>
+        <label>Phone<input id="c-phone" type="tel" autocomplete="tel"></label>
         <label class="full">I need
-          <select id="m-type">
-            <option>Availability on a stocked or repeat-production part</option>
-            <option>Component made to print</option>
-            <option>New pressure housing</option>
-            <option>Pressure housing recut quote</option>
-            <option>Muleshoe sleeve repair or rebuild</option>
-            <option>Surface and running gear</option>
-            <option>Proprietary MWD platform support</option>
-            <option>Not sure</option>
+          <select id="c-type">
+            <option>Quote on a drawing or model</option>
+            <option>Prototype or first article</option>
+            <option>Repeat production or blanket order</option>
+            <option>Supplier qualification information</option>
+            <option>Machining plus secondary operations</option>
+            <option>Not sure yet</option>
           </select>
         </label>
-        <label>Part number(s)<input id="m-pn" type="text" placeholder="Yours or the industry-common number"></label>
-        <label>Quantity<input id="m-qty" type="text"></label>
-        <label class="full">Details<textarea id="m-msg" placeholder="Tool platform, where the part is used, material, required date. Attach prints, photos, or a PO in the email that opens."></textarea></label>
-        <div class="note">Submitting opens a pre-filled email to info@fiftyxtechnology.com in your mail app. Attach drawings, photos, sample data, or a PO there. Customer prints and proprietary designs are reviewed confidentially and never published. ITAR-controlled data only after a supplier NDA is in place.</div>
-        <div class="submit"><button class="btn" type="submit">Send request <svg><use href="#arrow"/></svg></button><span class="mono" id="m-status" aria-live="polite"></span></div>
+        <label>Material<input id="c-mat" type="text" placeholder="e.g., 17-4 PH, BeCu, Inconel 718"></label>
+        <label>Quantity<input id="c-qty" type="text" placeholder="Now, and annual if known"></label>
+        <label class="full">Details<textarea id="c-msg" placeholder="Part description, critical features, finish and cert requirements, required date. Attach drawings or models in the email that opens."></textarea></label>
+        <div class="note">Submitting opens a pre-filled email to info@fiftyxtechnology.com in your mail app. Attach drawings, models, or specifications there. Customer prints and proprietary designs are reviewed confidentially and never published. ITAR-controlled data only after a supplier NDA is in place.</div>
+        <div class="submit"><button class="btn" type="submit">Send request <svg><use href="#arrow"/></svg></button><span class="mono" id="c-status" aria-live="polite"></span></div>
       </form>
     </div>
   </div>
@@ -778,7 +741,7 @@ figcaption .mono{color:var(--paper);margin-right:10px}
       </div>
       <div>
         <h4>Company</h4>
-        <ul><li><a href="index.html#capabilities">Capabilities</a></li><li><a href="cnc.html">CNC Machining</a></li><li><a href="mwd.html">MWD Components</a></li><li><a href="index.html#industries">Industries</a></li><li><a href="centralizers.html">Centralizers</a></li><li><a href="index.html#about">About</a></li><li><a href="index.html#name-change">Name change</a></li></ul>
+        <ul><li><a href="index.html#capabilities">Capabilities</a></li><li><a href="cnc.html">CNC Machining</a></li><li><a href="mwd.html">MWD Components</a></li><li><a href="centralizers.html">Centralizers</a></li><li><a href="index.html#industries">Industries</a></li><li><a href="index.html#about">About</a></li><li><a href="index.html#name-change">Name change</a></li></ul>
       </div>
       <div>
         <h4>Contact</h4>
@@ -801,15 +764,15 @@ figcaption .mono{color:var(--paper);margin-right:10px}
   var btn=document.getElementById('menu-btn'),links=document.getElementById('links');
   btn.addEventListener('click',function(){var o=links.classList.toggle('open');btn.setAttribute('aria-expanded',o?'true':'false');btn.textContent=o?'Close':'Menu';});
   links.addEventListener('click',function(e){if(e.target.tagName==='A'){links.classList.remove('open');btn.setAttribute('aria-expanded','false');btn.textContent='Menu';}});
-  var f=document.getElementById('mwdform');
+  var f=document.getElementById('cncform');
   f.addEventListener('submit',function(e){
     e.preventDefault();
     var g=function(id){return (document.getElementById(id).value||'').trim();};
-    var name=g('m-name'),email=g('m-email'),st=document.getElementById('m-status');
+    var name=g('c-name'),email=g('c-email'),st=document.getElementById('c-status');
     if(!name||!email){st.textContent='Name and email are required.';return;}
-    var type=g('m-type');
-    var body='Name: '+name+'\nCompany: '+g('m-company')+'\nEmail: '+email+'\nPhone: '+g('m-phone')+'\nRequest: '+type+'\nPart number(s): '+g('m-pn')+'\nQuantity: '+g('m-qty')+'\n\n'+g('m-msg')+'\n';
-    var subj='[MWD — '+type+'] '+(g('m-company')||name);
+    var type=g('c-type');
+    var body='Name: '+name+'\nCompany: '+g('c-company')+'\nEmail: '+email+'\nPhone: '+g('c-phone')+'\nRequest: '+type+'\nMaterial: '+g('c-mat')+'\nQuantity: '+g('c-qty')+'\n\n'+g('c-msg')+'\n';
+    var subj='[CNC — '+type+'] '+(g('c-company')||name);
     window.location.href='mailto:info@fiftyxtechnology.com?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
     st.textContent='Opening your email app…';
   });
