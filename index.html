@@ -281,6 +281,45 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
 @media (max-width:900px){.foot{grid-template-columns:1fr 1fr}}
 @media (max-width:520px){.foot{grid-template-columns:1fr}}
 
+
+/* ---------- hiring pill (hero) ---------- */
+.hire-pill{display:inline-flex;align-items:center;gap:10px;margin-bottom:22px;padding:8px 14px 8px 12px;border:1px solid var(--hair-d);border-radius:999px;background:rgba(18,20,22,.7);backdrop-filter:blur(6px);font-family:var(--display);font-stretch:112.5%;font-weight:600;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--paper);transition:border-color .18s,background .18s,color .18s}
+.hire-pill .dot{width:7px;height:7px;border-radius:50%;background:#E9FF2E;box-shadow:0 0 0 0 rgba(233,255,46,.6)}
+.hire-pill svg{width:12px;height:12px;transition:transform .18s}
+.hire-pill:hover{border-color:var(--paper);background:var(--paper);color:var(--ink)}
+.hire-pill:hover svg{transform:translateX(3px)}
+@media (prefers-reduced-motion:no-preference){.hire-pill .dot{animation:hire-ping 2.2s ease-out infinite}@keyframes hire-ping{0%{box-shadow:0 0 0 0 rgba(233,255,46,.55)}70%{box-shadow:0 0 0 9px rgba(233,255,46,0)}100%{box-shadow:0 0 0 0 rgba(233,255,46,0)}}}
+
+/* ---------- careers board (contact section) ---------- */
+.careers{margin-top:clamp(56px,7vw,96px);background:var(--ink);color:var(--paper);border:1px solid var(--ink);position:relative;overflow:hidden;isolation:isolate}
+.careers::before{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(var(--hair-d) 1px,transparent 1px),linear-gradient(90deg,var(--hair-d) 1px,transparent 1px);background-size:64px 64px;opacity:.35;mask-image:radial-gradient(ellipse at 80% 50%,#000 20%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at 80% 50%,#000 20%,transparent 75%)}
+.careers-grid{position:relative}
+.careers-ghost{position:absolute;right:-.04em;bottom:-.14em;z-index:-1;font-family:var(--display);font-stretch:112.5%;font-weight:700;font-size:clamp(90px,17vw,240px);line-height:1;letter-spacing:-.02em;color:transparent;-webkit-text-stroke:1.5px #2A2E32;white-space:nowrap;user-select:none;pointer-events:none}
+.careers-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:32px 64px;padding:clamp(32px,4vw,56px)}
+.careers .eyebrow{display:flex;align-items:center;gap:10px}
+.careers .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:#E9FF2E;flex:none}
+.careers h3{margin-top:16px;font-size:clamp(34px,4.6vw,60px);line-height:.98}
+.careers h3 em{font-style:normal;color:var(--steel)}
+.careers .blurb{margin-top:20px;color:var(--steel);line-height:1.65;font-size:16px;max-width:42ch}
+.careers .blurb b{color:var(--paper);font-weight:600}
+.roles{list-style:none;margin:0;padding:0;border-top:1px solid var(--hair-d)}
+.roles li{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:8px 24px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--hair-d)}
+.roles .n{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--steel-2)}
+.roles .role{font-family:var(--display);font-stretch:112.5%;font-weight:600;font-size:clamp(20px,2.2vw,28px);line-height:1.1}
+.roles .desc{grid-column:2;font-size:14px;line-height:1.55;color:var(--steel);max-width:52ch}
+.roles .tag{grid-row:1;grid-column:3;display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--paper);border:1px solid var(--hair-d);padding:6px 10px;white-space:nowrap}
+.roles .tag::before{content:"";width:6px;height:6px;border-radius:50%;background:#E9FF2E}
+.apply{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px 40px;align-items:center;padding:24px clamp(32px,4vw,56px);border-top:1px solid var(--hair-d);background:var(--graphite)}
+.apply .how{font-size:15px;line-height:1.6;color:var(--steel);max-width:64ch}
+.apply .how b{color:var(--paper);font-weight:600}
+.apply .how a{color:var(--paper);font-weight:600;text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--steel-2)}
+.apply .how a:hover{text-decoration-color:var(--paper)}
+.apply .steps{margin-top:10px;display:flex;flex-wrap:wrap;gap:8px 22px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel-2)}
+.apply .steps span b{color:var(--paper);font-weight:500;margin-right:8px}
+.careers .btn{border-color:var(--paper);background:var(--paper);color:var(--ink)}
+.careers .btn:hover{background:var(--ink);color:var(--paper)}
+@media (max-width:900px){.careers-grid{grid-template-columns:1fr}.apply{grid-template-columns:1fr}.careers-ghost{font-size:26vw}}
+@media (max-width:560px){.roles li{grid-template-columns:auto minmax(0,1fr)}.roles .tag{grid-row:auto;grid-column:2;justify-self:start}}
 </style>
 
 </head>
@@ -324,6 +363,7 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
 <section class="hero">
   <div class="wrap">
     <div>
+      <a class="hire-pill" href="#careers"><span class="dot" aria-hidden="true"></span>We're hiring <svg><use href="#arrow"/></svg></a>
       <div class="eyebrow">Cypress, Texas &nbsp;·&nbsp; U.S.-based manufacturer &nbsp;·&nbsp; Est. 2017</div>
       <h1>Precision manufacturing,<br>vertically integrated.<br><em>Built for industries that can't afford a miss.</em></h1>
       <p class="lede"><b>Complex parts. Difficult materials. One accountable manufacturer.</b> Fifty X combines precision CNC machining, engineered elastomers, fabrication, repair, and inspection under one roof. We help OEMs move demanding components from print to production with fewer handoffs, tighter process control, and clear accountability through final inspection.</p>
@@ -628,6 +668,29 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
         <div class="note">Submitting opens a pre-filled email to info@fiftyxtechnology.com from your mail app. Prints and drawings can be attached there. ITAR-controlled data should be sent only after a supplier NDA is in place.</div>
         <div class="submit"><button class="btn" type="submit">Send request <svg><use href="#arrow"/></svg></button><span class="mono" id="f-status" aria-live="polite"></span></div>
       </form>
+    </div>
+
+    <div class="careers" id="careers">
+      <div class="careers-grid">
+        <div class="careers-ghost" aria-hidden="true">HIRING</div>
+        <div>
+          <div class="eyebrow"><span class="dot" aria-hidden="true"></span>Careers &nbsp;·&nbsp; Cypress, Texas</div>
+          <h3>We're hiring.<br><em>Come build with us.</em></h3>
+          <p class="blurb"><b>New machines, robots on the floor, and more work than hands.</b> We are looking for people who take pride in a part, hold a standard without being asked, and want to grow with a company that is scaling on purpose.</p>
+        </div>
+        <ul class="roles" aria-label="Open positions">
+          <li><span class="n">01</span><span class="role">CNC Operator</span><span class="tag">Open</span><span class="desc">Run and tend multi-axis turning and milling centers. Load, measure, and keep parts in tolerance across the shift.</span></li>
+          <li><span class="n">02</span><span class="role">CNC Lead</span><span class="tag">Open</span><span class="desc">Own setups, prove-out, and daily output on the floor. Coach operators and hold the standard when it is inconvenient.</span></li>
+          <li><span class="n">03</span><span class="role">Operations Manager</span><span class="tag">Open</span><span class="desc">Run the plant: scheduling, quality, people, and delivery dates we keep. Report directly to the owner.</span></li>
+        </ul>
+      </div>
+      <div class="apply">
+        <div>
+          <p class="how"><b>How to apply:</b> email your resume to <a href="mailto:info@fiftyxtechnology.com?subject=Application%20%E2%80%94%20">info@fiftyxtechnology.com</a> with the role in the subject line. No portal, no forms. A real person reads every one and responds.</p>
+          <div class="steps"><span><b>01</b>Attach resume</span><span><b>02</b>Role in subject line</span><span><b>03</b>We reply within one week</span></div>
+        </div>
+        <a class="btn" href="mailto:info@fiftyxtechnology.com?subject=Application%20%E2%80%94%20%5BRole%5D&body=Role%20applying%20for%3A%20%0AName%3A%20%0APhone%3A%20%0A%0AResume%20attached.">Send resume <svg><use href="#arrow"/></svg></a>
+      </div>
     </div>
   </div>
 </section>
