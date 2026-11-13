@@ -89,3 +89,5 @@ a.fx-tilt,.fx-tilt a{backface-visibility:hidden}
 .fx-img:hover .fx-wm{opacity:.9}
 .wallshot .fx-wm{display:none}
 .hero-photo .fx-wm{bottom:auto;top:14px}
+.mosaic>figure:first-child .fx-img,.trio figure:first-child .fx-img{flex:1;min-height:0}
+.mosaic>figure:first-child .fx-img img,.trio figure:first-child .fx-img img{height:100%;width:100%;object-fit:cover}
