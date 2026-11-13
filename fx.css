@@ -82,3 +82,10 @@ a.fx-tilt,.fx-tilt a{backface-visibility:hidden}
 
 /* stat tick-up */
 .fx-count{font-variant-numeric:tabular-nums}
+
+/* FXT watermark on every photo */
+.fx-wm{position:absolute;right:12px;bottom:10px;z-index:3;pointer-events:none;display:inline-flex;align-items:center;gap:6px;opacity:.55;color:#fff;mix-blend-mode:screen;font-family:var(--display);font-stretch:112.5%;font-weight:700;font-size:11px;letter-spacing:.22em;line-height:1;text-shadow:0 1px 2px rgba(0,0,0,.6);filter:drop-shadow(0 1px 2px rgba(0,0,0,.6));transition:opacity .3s}
+.fx-wm svg{width:14px;height:14px;fill:#fff;flex:none}
+.fx-img:hover .fx-wm{opacity:.9}
+.wallshot .fx-wm{display:none}
+.hero-photo .fx-wm{bottom:auto;top:14px}
