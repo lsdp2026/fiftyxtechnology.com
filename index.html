@@ -110,7 +110,7 @@ p{margin:0}
 /* ---------- hero ---------- */
 .hero{position:relative;overflow:hidden;background:var(--ink)}
 .hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--hair-d) 1px,transparent 1px),linear-gradient(90deg,var(--hair-d) 1px,transparent 1px);background-size:96px 96px;opacity:.28;mask-image:linear-gradient(to bottom,rgba(0,0,0,.9),transparent 90%);-webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,.9),transparent 90%)}
-.hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px;align-items:center;padding-block:clamp(64px,9vw,128px)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px;align-items:center;padding-block:clamp(36px,4.5vw,64px) clamp(64px,9vw,128px)}
 .hero h1{font-size:clamp(36px,5vw,72px);margin-top:22px}
 .hero h1 em{font-style:normal;color:var(--steel)}
 .hero .lede{max-width:56ch;margin-top:28px;font-size:clamp(16px,1.35vw,19px);line-height:1.6;color:var(--steel)}
@@ -127,17 +127,6 @@ p{margin:0}
   .hero-mark .p1{animation-delay:.05s}.hero-mark .p2{animation-delay:.12s}.hero-mark .p3{animation-delay:.19s}.hero-mark .p4{animation-delay:.26s}
   .hero-mark .p5{animation-delay:.33s}.hero-mark .p6{animation-delay:.40s}.hero-mark .p7{animation-delay:.47s}.hero-mark .p8{animation-delay:.54s}
 }
-.hero-mark .plates{filter:drop-shadow(0 0 0 rgba(232,25,44,0)) drop-shadow(0 0 0 rgba(255,255,255,0)) drop-shadow(0 0 0 rgba(46,107,255,0));transition:filter .6s}
-.hero-mark .plate{transition:stroke-width .5s,transform .5s cubic-bezier(.2,.8,.2,1);stroke:url(#usa-rim);stroke-width:0;paint-order:stroke;stroke-linejoin:round}
-.hero-mark:hover .plate{stroke-width:.8}
-.hero-mark:hover .plates{animation:usa-halo 3.6s linear infinite}
-@keyframes usa-halo{
-  0%{filter:drop-shadow(-3px 0 5px rgba(232,25,44,.34)) drop-shadow(0 -3px 5px rgba(255,255,255,.22)) drop-shadow(3px 0 5px rgba(46,107,255,.4))}
-  33%{filter:drop-shadow(1.5px -2.6px 5px rgba(232,25,44,.34)) drop-shadow(2.6px 1.5px 5px rgba(255,255,255,.22)) drop-shadow(-1.5px 2.6px 5px rgba(46,107,255,.4))}
-  66%{filter:drop-shadow(1.5px 2.6px 5px rgba(232,25,44,.34)) drop-shadow(-2.6px 1.5px 5px rgba(255,255,255,.22)) drop-shadow(-1.5px -2.6px 5px rgba(46,107,255,.4))}
-  100%{filter:drop-shadow(-3px 0 5px rgba(232,25,44,.34)) drop-shadow(0 -3px 5px rgba(255,255,255,.22)) drop-shadow(3px 0 5px rgba(46,107,255,.4))}
-}
-@media (prefers-reduced-motion:reduce){.hero-mark:hover .plates{animation:none;filter:drop-shadow(0 0 8px rgba(232,25,44,.4)) drop-shadow(0 0 8px rgba(255,255,255,.2)) drop-shadow(0 0 8px rgba(46,107,255,.45))}}
 .hero-mark .tag{margin-top:18px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--steel-2)}
 @media (max-width:900px){
   .hero .wrap{grid-template-columns:1fr;gap:40px}
@@ -467,13 +456,7 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
     </div>
     <div class="hero-mark" aria-hidden="true">
       <svg viewBox="0 0 100 100">
-        <defs>
-          <linearGradient id="usa-rim" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="100" y2="100">
-            <stop offset="0" stop-color="#E8192C"/><stop offset=".33" stop-color="#FFFFFF"/><stop offset=".66" stop-color="#2E6BFF"/><stop offset="1" stop-color="#E8192C"/>
-            <animateTransform attributeName="gradientTransform" type="rotate" from="0 50 50" to="360 50 50" dur="6s" repeatCount="indefinite"/>
-          </linearGradient>
-        </defs>
-        <g class="plates">
+        <g>
           <path class="plate p1" d="M0 10.8 L0 0 L17 0 L27.8 10.8 Z M100 0 L100 10.8 L72.2 10.8 L83 0 Z"/>
           <path class="plate p2" d="M0 17 L0 14.2 L31.2 14.2 L40.3 23.3 L6.3 23.3 Z M100 17 L93.7 23.3 L59.7 23.3 L68.8 14.2 L100 14.2 Z"/>
           <path class="plate p3" d="M18.8 35.8 L9.7 26.7 L43.7 26.7 L50 33 L56.3 26.7 L90.3 26.7 L81.2 35.8 Z"/>
