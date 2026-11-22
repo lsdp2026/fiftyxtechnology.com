@@ -218,6 +218,10 @@ p{margin:0}
 .spec .v{font-family:var(--display);font-stretch:112.5%;font-weight:600;font-size:18px;margin-top:6px;font-variant-numeric:tabular-nums}
 .spec .n{font-size:12px;color:var(--steel);margin-top:2px}
 .mwd .actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+.svc.svc-row{grid-template-columns:repeat(4,1fr)}
+.svc.svc-row>div,.svc.svc-row>a{padding:26px 24px 28px}
+@media (max-width:1000px){.svc.svc-row{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.svc.svc-row{grid-template-columns:1fr}}
 @media (max-width:900px){.mwd-grid{grid-template-columns:1fr}.mwd .banner .x{width:56px;height:56px}}
 @media (max-width:600px){.svc{grid-template-columns:1fr}.spec{grid-template-columns:1fr}}
 
@@ -339,7 +343,7 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
 /* ---------- Effectiveness section ---------- */
 .cred.std .k{color:var(--steel)}
 .cred.std .v{font-size:clamp(15px,1.2vw,18px)}
-.eff{position:relative;margin-top:clamp(56px,7vw,96px);padding-top:clamp(40px,5vw,64px);border-top:1px solid var(--hair-d)}
+.eff{position:relative}
 .cap-eff{margin-top:auto;padding-top:16px;border-top:1px solid var(--hair-l);font-size:13.5px;line-height:1.5;color:var(--ink)}
 .cap-eff span{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);margin-bottom:6px}
 .partner{margin-top:clamp(40px,5vw,64px);background:var(--ink);color:var(--paper);display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:32px 56px;padding:clamp(32px,4vw,56px);position:relative;overflow:hidden;isolation:isolate}
@@ -609,24 +613,15 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
         <h2 style="margin-top:12px">The work that built us.<span>Still our specialty.</span></h2>
       </div>
     </div>
-    <div class="mwd-grid">
-      <div>
-        <p class="lede">If you run MWD or directional tools in North America, you already know what we make. New components, rubber centralizers, and the high-demand repair and fabrication work that keeps fleets turning.</p>
-        <p class="sub">We started in 2017 with a single molding press and a proprietary HNBR compound developed for downhole service. Everything since – the CNC capacity, the campus, the robotics – was built to serve this industry better, not to leave it.</p>
-        <p class="sub">Send the print, the failed part, or the field report. You will not need to translate it for us.</p>
-        <div class="actions">
-          <a class="btn btn-solid" href="#contact">Send RFQ <svg><use href="#arrow"/></svg></a>
-          <a class="btn btn-ghost" href="mwd.html">MWD components <svg><use href="#arrow"/></svg></a>
-        </div>
-      </div>
-      <div>
-        <div class="svc">
-          <a href="mwd.html" class="svc-link"><h3>MWD components →</h3><p>Lower-end and pulser parts, interconnects, spearpoints, pressure housings, muleshoes, and running gear. Stocked, repeat-production, and made to print.</p></a>
-          <a href="centralizers.html" class="svc-link"><h3>Rubber centralizers →</h3><p>New and remolded on proprietary HNBR, in more than fifty profiles, in a true range of molded-in colors. Advanced Series and HyperHeat™ platforms.</p></a>
-          <div><h3>Repair &amp; refurbishment</h3><p>Runout correction, re-machining, re-bonding, and re-marking of critical downhole components with documented inspection.</p></div>
-          <div><h3>Fabrication &amp; hot jobs</h3><p>When the tool is on a truck and the rig is waiting. Priority scheduling with clear commitments and live status updates.</p></div>
-        </div>
-      </div>
+    <div class="svc svc-row">
+      <a href="mwd.html" class="svc-link"><h3>MWD components →</h3><p>Lower-end and pulser parts, interconnects, spearpoints, pressure housings, muleshoes, and running gear. Stocked, repeat-production, and made to print.</p></a>
+      <a href="centralizers.html" class="svc-link"><h3>Rubber centralizers →</h3><p>New and remolded on proprietary HNBR, in more than fifty profiles, in a true range of molded-in colors. Advanced Series and HyperHeat™ platforms.</p></a>
+      <div><h3>Repair &amp; refurbishment</h3><p>Runout correction, re-machining, re-bonding, and re-marking of critical downhole components with documented inspection.</p></div>
+      <div><h3>Fabrication &amp; hot jobs</h3><p>When the tool is on a truck and the rig is waiting. Priority scheduling with clear commitments and live status updates.</p></div>
+    </div>
+    <div class="actions">
+      <a class="btn btn-solid" href="#contact">Send RFQ <svg><use href="#arrow"/></svg></a>
+      <a class="btn btn-ghost" href="mwd.html">MWD components <svg><use href="#arrow"/></svg></a>
     </div>
   </div>
 </section>
@@ -675,35 +670,11 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
 <!-- ================= ABOUT ================= -->
 <section class="section about" id="about">
   <div class="wrap">
-    <div class="about-grid">
-      <div>
-        <div class="eyebrow">About Fifty X Technology</div>
-        <h2 style="margin-top:14px">Built from the floor up.<br>Engineered for what comes next.</h2>
-        <div class="body">
-          <p><b>Fifty X Technology began in Cypress, Texas, in 2017</b> with one molding press and a clear objective: build critical components with greater control, stronger technical capability, and complete accountability to the customer.</p>
-          <p>That foundation expanded quickly. CNC machining came in-house in 2019, followed by federal contracting, multi-axis manufacturing, a dedicated two-building campus, robotic machine tending, enhanced sub-spindle capability, and AI-enabled production systems. What began as an elastomer operation has developed into an integrated manufacturing company spanning precision machining, engineered elastomers, fabrication, and critical component repair.</p>
-          <p><b>The progression has been deliberate.</b> Every major investment has increased our control over quality, lead time, capacity, or process performance. The name Fifty X Technology represents the next phase: deeper automation, smarter manufacturing systems, broader market reach, and a company built to keep advancing.</p>
-        </div>
-      </div>
-      <div>
-        <ul class="timeline" aria-label="Company timeline">
-          <li><span class="y">2017</span><span>Founded in Cypress, Texas. Proprietary HNBR development begins, and the first molding press enters production.</span></li>
-          <li><span class="y">2019</span><span>CNC machining is brought in-house, establishing integrated metal and elastomer manufacturing.</span></li>
-          <li><span class="y">2020</span><span>Manufacturing capacity triples. CAGE Code 8JPP2 is secured, opening the company's federal contracting division.</span></li>
-          <li><span class="y">2022</span><span>Multi-axis turning and milling capacity expands as precision machining becomes a major operating division.</span></li>
-          <li><span class="y">2024</span><span>Operations move into a dedicated two-building manufacturing campus built to support continued growth.</span></li>
-          <li><span class="y">2025</span><span>Collaborative robotic technology is deployed for CNC machine tending, beginning the next stage of production automation.</span></li>
-          <li><span class="y">2026</span><span>Enhanced sub-spindle machining and AI-enabled production systems are introduced. Lone Star Downhole Products becomes Fifty X Technology, reflecting a broader capability base and a larger vision for the company.</span></li>
-        </ul>
-      </div>
-    </div>
-
-
     <div class="eff" id="effectiveness">
     <div class="ghost" aria-hidden="true">EFFECTIVENESS</div>
     <div class="head">
       <div>
-        <div class="eyebrow">Brand philosophy</div>
+        <div class="eyebrow">About Fifty X Technology</div>
         <h2 style="margin-top:14px">Effectiveness<br>above all.</h2>
       </div>
       <div>
