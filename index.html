@@ -387,33 +387,15 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
 .turnkey-line:hover .go svg{transform:translateX(4px)}
 @media (max-width:900px){.turnkey-line{grid-template-columns:1fr}}
 
-/* ---------- industries: gauge ---------- */
-.gauge{position:relative;margin-top:clamp(8px,2vw,24px);--x:0%}
-.gauge .rail{position:relative;height:30px;border-bottom:1px solid #3A3F45;background:repeating-linear-gradient(90deg,#2A2E32 0 1px,transparent 1px 12px) bottom/100% 9px no-repeat,repeating-linear-gradient(90deg,#3A3F45 0 1px,transparent 1px 60px) bottom/100% 18px no-repeat}
-.gauge .needle{position:absolute;left:var(--x);bottom:-1px;width:2px;height:30px;margin-left:-1px;background:var(--paper);transition:left .7s cubic-bezier(.2,.8,.2,1)}
-.gauge .needle::after{content:"";position:absolute;left:50%;bottom:-4px;width:7px;height:7px;margin-left:-3.5px;border-radius:50%;background:var(--paper)}
-.gauge .st{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:0}
-.gauge .st>li{position:relative;padding:26px 20px 0 0;cursor:default}
-.gauge .st>li>a{color:inherit;text-decoration:none;display:block}
-.gauge .st>li::before{content:"";position:absolute;left:0;top:-30px;width:1px;height:30px;background:#5A6066;transition:background .3s}
-.gauge .n{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--steel-2);transition:color .3s}
-.gauge .t{display:block;margin-top:10px;font-family:var(--display);font-stretch:112.5%;font-weight:600;font-size:clamp(16px,1.35vw,20px);line-height:1.2;color:var(--steel);transition:color .3s,transform .5s cubic-bezier(.2,.8,.2,1)}
-.gauge .m{display:block;margin-top:10px;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel-2);opacity:0;transform:translateY(6px);transition:opacity .35s,transform .45s cubic-bezier(.2,.8,.2,1)}
-.gauge .st>li.on::before{background:var(--paper)}
-.gauge .st>li.on .n{color:var(--paper)}
-.gauge .st>li.on .t{color:var(--paper);transform:translateX(6px)}
-.gauge .st>li.on .m{opacity:1;transform:none}
-@media (max-width:900px){
-  .gauge .rail{display:none}
-  .gauge .st{grid-template-columns:1fr 1fr;border-top:1px solid var(--hair-d)}
-  .gauge .st>li{padding:20px 16px 22px 0;border-bottom:1px solid var(--hair-d)}
-  .gauge .st>li::before{display:none}
-  .gauge .t,.gauge .n{color:var(--paper)}
-  .gauge .st>li.on .t{transform:none}
-  .gauge .m{opacity:1;transform:none}
-}
-@media (max-width:560px){.gauge .st{grid-template-columns:1fr}}
-@media (prefers-reduced-motion:reduce){.gauge .needle,.gauge .t,.gauge .m{transition:none}}
+/* ---------- industries: word cloud ---------- */
+.ind-cloud{display:flex;flex-wrap:wrap;align-items:center;gap:.18em .34em;font-family:var(--display);font-stretch:112.5%;font-weight:700;font-size:clamp(30px,4.3vw,62px);line-height:1.08;letter-spacing:-.025em;margin-top:clamp(0px,1vw,12px)}
+.ind-cloud .w{color:transparent;-webkit-text-stroke:1.2px #5A6066;text-decoration:none;text-wrap:nowrap;transition:color .35s,-webkit-text-stroke-color .35s,transform .5s cubic-bezier(.2,.8,.2,1);cursor:default}
+.ind-cloud a.w{cursor:pointer}
+.ind-cloud .x{width:.42em;height:.42em;fill:#3A3F45;margin:0 .1em;flex:none;transition:fill .35s}
+.ind-cloud .w:hover,.ind-cloud .w:focus-visible{color:var(--paper);-webkit-text-stroke-color:var(--paper);outline:0}
+.ind-cloud:hover .x{fill:#5A6066}
+@media (max-width:560px){.ind-cloud{font-size:10.5vw;gap:.12em 0;flex-direction:column;align-items:flex-start}.ind-cloud .w{text-wrap:balance;-webkit-text-stroke-width:1px}.ind-cloud .x{display:none}}
+@media (prefers-reduced-motion:reduce){.ind-cloud .w{transition:none}}
 </style>
 
 </head>
@@ -572,15 +554,12 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
         <h2 style="margin-top:14px">Where the standard goes,<br>we go.</h2>
       </div>
     </div>
-    <div class="gauge" aria-label="Industries served">
-      <div class="rail" aria-hidden="true"><i class="needle"></i></div>
-      <ol class="st">
-        <li><a href="#mwd"><span class="n">01</span><span class="t">Energy – MWD &amp;<br>Directional Drilling</span><span class="m">Where we started</span></a></li>
-        <li><span class="n">02</span><span class="t">Aerospace &amp;<br>Defense</span><span class="m">SAM · JCP · DLA</span></li>
-        <li><span class="n">03</span><span class="t">Robotics &amp;<br>Automation</span><span class="m">Structural · Motion</span></li>
-        <li><span class="n">04</span><span class="t">Industrial &amp;<br>Fluid Handling</span><span class="m">Seals · Sleeves · Wear parts</span></li>
-        <li><span class="n">05</span><span class="t">Geothermal &amp;<br>Subsurface Energy</span><span class="m">Heat · Pressure · Depth</span></li>
-      </ol>
+    <div class="ind-cloud" aria-label="Industries served">
+      <a class="w" href="#mwd">Energy</a><svg class="x" aria-hidden="true"><use href="#mark-layer"/></svg>
+      <span class="w">Aerospace &amp; Defense</span><svg class="x" aria-hidden="true"><use href="#mark-layer"/></svg>
+      <span class="w">Robotics &amp; Automation</span><svg class="x" aria-hidden="true"><use href="#mark-layer"/></svg>
+      <span class="w">Industrial &amp; Fluid Handling</span><svg class="x" aria-hidden="true"><use href="#mark-layer"/></svg>
+      <span class="w">Geothermal</span>
     </div>
   </div>
 </section>
@@ -810,10 +789,6 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
 </script>
 
 <script>
-(function(){var g=document.querySelector('.gauge');if(!g)return;var li=[].slice.call(g.querySelectorAll('.st>li'));
-function set(el){li.forEach(function(x){x.classList.remove('on')});el.classList.add('on');var gb=g.getBoundingClientRect(),b=el.getBoundingClientRect();g.style.setProperty('--x',((b.left-gb.left)/gb.width*100).toFixed(2)+'%');}
-li.forEach(function(el){el.addEventListener('mouseenter',function(){set(el)});el.addEventListener('focusin',function(){set(el)});el.addEventListener('click',function(){set(el)});});
-set(li[0]);window.addEventListener('resize',function(){var on=g.querySelector('.st>li.on');if(on)set(on)});})();
 </script>
 <script>(function(){var r=document.getElementById("name-change");if(r&&new Date()>new Date(2027,0,1)){r.remove();var l=document.querySelector('a[href="#name-change"]');if(l&&l.parentNode)l.parentNode.remove();}})();</script>
 <script src="fx.js?v=32" defer></script>
