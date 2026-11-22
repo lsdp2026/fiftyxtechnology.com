@@ -438,6 +438,50 @@ figcaption .mono{color:var(--paper);margin-right:10px}
 .dark-form button{background:var(--paper);color:var(--ink);border-color:var(--paper)}
 .dark-form button:hover{background:var(--ink);color:var(--paper)}
 @media (max-width:900px){#request .contact-grid{grid-template-columns:1fr}}
+
+/* ---------- turnkey journey ---------- */
+.journey{position:relative;margin-top:clamp(8px,2vw,24px)}
+.journey .rail{position:absolute;left:0;right:0;top:27px;height:1px;background:var(--hair-d);overflow:hidden}
+.journey .rail i{position:absolute;top:0;left:0;height:100%;width:18%;background:linear-gradient(90deg,transparent,var(--paper),transparent)}
+@media (prefers-reduced-motion:no-preference){.journey .rail i{animation:rail 5s linear infinite}@keyframes rail{from{transform:translateX(-100%)}to{transform:translateX(560%)}}}
+.stops{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,1fr);gap:24px;position:relative}
+.stops li{padding-top:56px;position:relative}
+.stops li::before{content:"";position:absolute;left:0;top:20px;width:15px;height:15px;border-radius:50%;background:var(--ink);border:1.5px solid var(--paper);box-sizing:border-box}
+.stops li.in::before{background:var(--paper)}
+.stops li.out::before{background:var(--ink);border-style:dashed}
+.stops .n{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--steel-2)}
+.stops b{display:block;margin-top:6px;font-family:var(--display);font-stretch:112.5%;font-weight:600;font-size:16px;line-height:1.2}
+.stops i{display:block;margin-top:6px;font-style:normal;font-size:13px;line-height:1.5;color:var(--steel)}
+.stops li.out b{color:var(--paper)}
+.stops li.out{padding-left:16px;border-left:1px dashed var(--hair-d);margin-left:-16px}
+.journey .legend{margin-top:24px;display:flex;flex-wrap:wrap;gap:10px 28px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel)}
+.journey .legend span{display:inline-flex;align-items:center;gap:10px}
+.journey .sw{width:11px;height:11px;border-radius:50%;border:1.5px solid var(--paper);box-sizing:border-box;display:inline-block}
+.journey .sw.in{background:var(--paper)}
+.journey .sw.out{border-style:dashed}
+@media (max-width:1000px){.stops{grid-template-columns:repeat(3,1fr)}.journey .rail{display:none}.stops li{padding-top:36px}.stops li.out{margin-left:0;padding-left:16px}}
+@media (max-width:560px){.stops{grid-template-columns:1fr 1fr}}
+.procs{margin-top:clamp(48px,6vw,80px);padding-top:clamp(28px,3vw,40px);border-top:1px solid var(--hair-d)}
+.procs-head{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:16px 64px;align-items:end;margin-bottom:28px}
+.procs-head .intro-d{margin:0;font-size:15.5px;max-width:56ch}
+@media (max-width:900px){.procs-head{grid-template-columns:1fr}}
+.fam-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hair-d);border:1px solid var(--hair-d)}
+.fam-grid li{background:var(--graphite);padding:24px 24px 26px;display:grid;grid-template-columns:auto 1fr;gap:4px 18px;min-height:168px;transition:background .25s}
+.fam-grid .n{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--steel-2);padding-top:5px;grid-row:1/4}
+.fam-grid b{font-family:var(--display);font-stretch:112.5%;font-weight:600;font-size:18px;line-height:1.2}
+.fam-grid i{font-style:normal;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--paper);line-height:1.7;margin-top:4px}
+.fam-grid p{margin:8px 0 0;font-size:13.5px;line-height:1.55;color:var(--steel);max-height:0;overflow:hidden;opacity:0;transition:max-height .45s cubic-bezier(.2,.8,.2,1),opacity .3s}
+.fam-grid li:hover,.fam-grid li:focus-within{background:var(--ink)}
+.fam-grid li:hover p,.fam-grid li:focus-within p{max-height:160px;opacity:1}
+@media (hover:none){.fam-grid p{max-height:none;opacity:1}}
+@media (max-width:900px){.fam-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.fam-grid{grid-template-columns:1fr}}
+.package{margin-top:clamp(40px,5vw,64px);display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hair-d);border:1px solid var(--hair-d)}
+.package>div{background:var(--ink);padding:22px 24px}
+.package .k{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--steel-2)}
+.package .v{margin-top:8px;font-size:14.5px;line-height:1.6;color:var(--steel)}
+.package .v b{color:var(--paper);font-weight:600}
+@media (max-width:800px){.package{grid-template-columns:1fr}}
 </style>
 
 </head>
@@ -550,7 +594,7 @@ figcaption .mono{color:var(--paper);margin-right:10px}
         <div class="idx">06 &nbsp; Finishing</div>
         <h3>Finished, not just machined</h3>
         <p>Heat treat, plating, coatings, marking, and assembly are managed through vendors we have qualified and hold accountable. You issue one purchase order and receive one finished, inspected, certified part, with the paperwork to match.</p>
-        <ul><li>Secondary operations coordinated and inspected on return</li><li>Certifications and traceability assembled in one package</li><li>See the full list of managed services below</li></ul>
+        <ul><li>Secondary operations coordinated and inspected on return</li><li>Certifications and traceability assembled in one package</li><li>See how a turnkey part moves through the shop below</li></ul>
       </article>
     </div>
 
@@ -642,17 +686,50 @@ figcaption .mono{color:var(--paper);margin-right:10px}
 <!-- ================= SECONDARY SERVICES ================= -->
 <section class="section" id="services">
   <div class="wrap">
-    <div class="ghost" aria-hidden="true">FINISHED</div>
-    <div class="turnkey-d">
+    <div class="ghost" aria-hidden="true">TURNKEY</div>
+    <div class="head">
       <div>
-        <div class="eyebrow">Turnkey through to finish</div>
-        <h2 style="margin-top:14px">One PO.<br>A finished part.</h2>
-        <p class="intro-d">Machining is rarely the last step. Heat treat, plating, coatings, and other secondary operations run through a curated network of vendors we have qualified and manage ourselves.</p>
-        <p class="intro-d">We schedule them, ship them, inspect the parts when they return, and assemble the certifications into one package. You place one order and receive one finished, inspected, certified part.</p>
+        <div class="eyebrow">Turnkey components</div>
+        <h2 style="margin-top:14px">One purchase order.<br>One finished part.</h2>
       </div>
-      <ul class="svc-dark" aria-label="Secondary services managed by Fifty X">
-        <li>Heat treatment</li><li>Passivation</li><li>Anodizing</li><li>Plating</li><li>Phosphate coating</li><li>Chemical conversion coating</li><li>Black oxide</li><li>Powder coating</li><li>Painting</li><li>Surface treatment</li><li>Grinding</li><li>Honing</li><li>Welding</li><li>Assembly</li><li>Laser marking</li><li>Engraving</li>
+      <div>
+        <p class="intro">Machining is rarely the last step, and a part is not done until it is heat treated, finished, marked, inspected, and certified. Core operations happen on our floor. Specialized outside processes run through a network of specialists we have qualified, and every one of them is scheduled, documented, and inspected under Fifty X oversight.</p>
+        <p class="intro" style="margin-top:14px">You place one order with one partner. We carry the part from bar stock to certificate and hand you one package: the part, the inspection report, and every certification behind it.</p>
+      </div>
+    </div>
+
+    <div class="journey" aria-label="The path of a turnkey part">
+      <div class="rail" aria-hidden="true"><i></i></div>
+      <ol class="stops">
+        <li class="in"><span class="n">01</span><b>Your print</b><i>One PO. One point of contact.</i></li>
+        <li class="in"><span class="n">02</span><b>Material &amp; saw</b><i>Certified stock, work order on every bar.</i></li>
+        <li class="in"><span class="n">03</span><b>Machine</b><i>Multi-axis turning and milling on our floor.</i></li>
+        <li class="out"><span class="n">04</span><b>Outside process</b><i>Qualified specialists, managed by us.</i></li>
+        <li class="in"><span class="n">05</span><b>Inspect</b><i>Every part checked again on return.</i></li>
+        <li class="in"><span class="n">06</span><b>Certify &amp; ship</b><i>One package. One accountable name.</i></li>
+      </ol>
+      <div class="legend"><span><i class="sw in"></i>Performed in-house</span><span><i class="sw out"></i>Managed outside process, inspected on return</span></div>
+    </div>
+
+    <div class="procs">
+      <div class="procs-head">
+        <div class="eyebrow">Managed outside processes</div>
+        <p class="intro-d">Hover a family to see what it covers. If the process your print calls for is not listed, ask. We have probably managed it.</p>
+      </div>
+      <ul class="fam-grid">
+        <li><span class="n">A</span><b>Thermal</b><i>Heat treatment</i><p>Through-hardening, case hardening, stress relief, and solution treating to the specification on your print, with the furnace certification in the package.</p></li>
+        <li><span class="n">B</span><b>Surface conversion</b><i>Passivation · Anodizing · Plating · Phosphate · Chemical conversion · Black oxide</i><p>Corrosion resistance, wear resistance, and conductivity treatments applied by certified processors and verified on return.</p></li>
+        <li><span class="n">C</span><b>Coatings &amp; finish</b><i>Powder coating · Painting · Surface treatment</i><p>Applied coatings and finishes to specification, masked where the print requires, with fit and thread integrity checked after.</p></li>
+        <li><span class="n">D</span><b>Precision finishing</b><i>Grinding · Honing</i><p>When the tolerance or the surface finish goes beyond what the cutting tool should hold, the part goes to a specialist and comes back measured.</p></li>
+        <li><span class="n">E</span><b>Build</b><i>Welding · Assembly</i><p>Sub-assemblies, welded fabrications, and installed hardware, delivered as one component instead of a kit of parts.</p></li>
+        <li><span class="n">F</span><b>Identification</b><i>Laser marking · Engraving</i><p>Part numbers, serials, lot codes, and logos marked to your drawing so traceability survives the field.</p></li>
       </ul>
+    </div>
+
+    <div class="package">
+      <div><div class="k">What arrives</div><div class="v"><b>The part,</b> finished to print and inspected after every outside step.</div></div>
+      <div><div class="k">With it</div><div class="v"><b>The paperwork,</b> material certs, process certs, certificate of conformance, and FAI when required, in one package.</div></div>
+      <div><div class="k">Behind it</div><div class="v"><b>One name.</b> If anything in that package is wrong, you call us, not a vendor you have never met.</div></div>
     </div>
   </div>
 </section>

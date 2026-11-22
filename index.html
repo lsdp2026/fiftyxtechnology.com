@@ -374,6 +374,16 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
 .founder blockquote{margin:0;font-family:var(--display);font-stretch:112.5%;font-weight:500;font-size:clamp(19px,2vw,27px);line-height:1.35;text-wrap:balance;max-width:34em}
 .founder cite{display:block;font-style:normal;margin-top:18px;font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel)}
 @media (max-width:900px){.founder{grid-template-columns:1fr}}
+
+.turnkey-line{margin-top:clamp(48px,6vw,80px);display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:16px 40px;align-items:center;padding:24px 28px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);text-decoration:none;transition:background .2s,color .2s}
+.turnkey-line .k{font-family:var(--display);font-stretch:112.5%;font-weight:600;font-size:18px;white-space:nowrap}
+.turnkey-line .v{font-size:14.5px;line-height:1.55;color:var(--steel);max-width:70ch}
+.turnkey-line .go{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+.turnkey-line .go svg{width:14px;height:14px;transition:transform .2s}
+.turnkey-line:hover{background:var(--paper);color:var(--ink)}
+.turnkey-line:hover .v{color:var(--slate)}
+.turnkey-line:hover .go svg{transform:translateX(4px)}
+@media (max-width:900px){.turnkey-line{grid-template-columns:1fr}}
 </style>
 
 </head>
@@ -515,33 +525,11 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
       </div>
     </aside>
 
-    <div class="integrated">
-      <div>
-        <div class="eyebrow">Vertically integrated</div>
-        <h3 style="margin-top:14px">One partner. Complete process accountability.</h3>
-        <p>Core operations, from programming and machining to molding, bonding, fabrication, and inspection, are performed in-house under one quality system. Specialized outside processes such as heat treatment, plating, and coatings are coordinated, documented, and inspected under Fifty X oversight. Either way, you deal with one partner and one accountable name on the certificate.</p>
-      </div>
-      <div class="flow" aria-label="Process flow">
-        <div class="in"><span>01</span>Print &amp; program</div>
-        <div><span>02</span>Material &amp; saw</div>
-        <div><span>03</span>CNC machine</div>
-        <div><span>04</span>Mold &amp; bond</div>
-        <div><span>05</span>Fabricate &amp; assemble</div>
-        <div><span>06</span>Inspect &amp; certify</div>
-        <div class="in"><span>07</span>Ship &amp; support</div>
-      </div>
-    </div>
-
-    <div class="turnkey">
-      <div>
-        <div class="eyebrow">Turnkey through to finish</div>
-        <h3 style="margin-top:14px">One PO. A finished part.</h3>
-        <p>Machining is rarely the last step. Heat treat, plating, coatings, and other secondary operations run through a network of specialists we have qualified and manage ourselves. We schedule them, document them, and inspect the parts when they return, so you place one order and receive one finished, inspected, certified part.</p>
-      </div>
-      <ul class="svc-list" aria-label="Secondary services managed by Fifty X">
-        <li>Heat treatment</li><li>Passivation</li><li>Anodizing</li><li>Plating</li><li>Phosphate coating</li><li>Chemical conversion coating</li><li>Black oxide</li><li>Powder coating</li><li>Painting</li><li>Surface treatment</li><li>Grinding</li><li>Honing</li><li>Welding</li><li>Assembly</li><li>Laser marking</li><li>Engraving</li>
-      </ul>
-    </div>
+    <a class="turnkey-line" href="cnc.html#services">
+      <span class="k">Turnkey components</span>
+      <span class="v">Machined, molded, fabricated, finished, inspected, and certified under one purchase order. Outside processes such as heat treat, plating, and coatings are managed, documented, and inspected by Fifty X.</span>
+      <span class="go">How turnkey works <svg><use href="#arrow"/></svg></span>
+    </a>
   </div>
 </section>
 
