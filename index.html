@@ -227,6 +227,23 @@ p{margin:0}
 
 /* ---------- technology ---------- */
 .tech .head{align-items:start}
+.tech-layout{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:0 clamp(28px,4.5vw,64px);align-items:start}
+.tech-photo{margin:0;position:relative;align-self:stretch;display:flex}
+.tech-photo .fx-img{display:block;flex:1;min-height:0;aspect-ratio:4/5;background:var(--ink)}
+@media (min-width:1001px){.tech-photo .fx-img{aspect-ratio:auto;height:100%}}
+.tech-photo .fx-img img{width:100%;height:100%;object-fit:cover}
+.tech-photo figcaption{position:absolute;left:0;right:0;bottom:0;padding:16px 18px;display:flex;justify-content:space-between;gap:12px;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--paper);background:linear-gradient(0deg,rgba(0,0,0,.72),transparent);pointer-events:none;z-index:3}
+.tech-photo figcaption span:first-child{font-weight:500}
+.tech-photo .fx-wm{z-index:4}
+.tech-photo figcaption{padding-right:110px}
+.tech-body{padding-top:clamp(8px,1.5vw,24px)}
+.tech-body h2{font-size:clamp(44px,6.4vw,96px);line-height:.92;letter-spacing:-.03em;margin:14px 0 0 calc(-1 * clamp(48px,11vw,180px));color:#fff;mix-blend-mode:difference;position:relative}
+.tech-body .intro{margin-top:clamp(24px,2.5vw,36px);font-size:clamp(16px,1.25vw,18px);line-height:1.65;color:var(--slate);max-width:58ch}
+.tech-body .tech-grid{grid-template-columns:1fr 1fr;margin-top:clamp(32px,4vw,56px)}
+.tech-body .tech-grid article:nth-child(2n){margin-right:0}
+.tech-body .tech-grid article{padding-bottom:20px}
+@media (max-width:1000px){.tech-layout{grid-template-columns:1fr}.tech-photo{max-width:560px}.tech-body h2{margin-left:0;color:var(--ink);mix-blend-mode:normal}}
+@media (max-width:560px){.tech-body .tech-grid{grid-template-columns:1fr}.tech-body .tech-grid article{margin-right:0}}
 .tech-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--hair-l)}
 .tech-grid article{padding:28px 24px 8px 0;border-top:3px solid var(--ink);margin-top:-1px;margin-right:24px}
 .tech-grid article:last-child{margin-right:0}
@@ -594,32 +611,35 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
 <!-- ================= TECHNOLOGY ================= -->
 <section class="section light tech" id="technology">
   <div class="wrap">
-    <div class="head">
-      <div>
+    <div class="tech-layout">
+      <figure class="tech-photo">
+        <span class="fx-img"><img src="img-robot.jpg" alt="Collaborative robot above a batch of machined copper-alloy components on the Fifty X Technology production floor" width="1200" height="1500" loading="lazy"></span>
+        <figcaption><span>Collaborative robot &nbsp;·&nbsp; Copper-alloy components</span></figcaption>
+      </figure>
+      <div class="tech-body">
         <div class="eyebrow">Technology &amp; continuous improvement</div>
-        <h2 style="margin-top:14px">Never complacent.</h2>
+        <h2>Never<br>complacent.</h2>
+        <p class="intro">"Technology" is in our name because it is how we operate: collaborative automation, mill-turn equipment, advanced inspection, and the systems that connect them. Faster, more repeatable, more capable, every year.</p>
+        <div class="tech-grid">
+          <article>
+            <h3>Robotic technology deployment</h3>
+            <p>Robotics deployed in production. Consistent, repeatable output.</p>
+          </article>
+          <article>
+            <h3>Advanced sub-spindle CNC technology</h3>
+            <p>Both ends of the part in one controlled cycle. Fewer setups, less stacked variation, finished parts off the machine.</p>
+          </article>
+          <article>
+            <h3>AI-enabled manufacturing</h3>
+            <p>Shop-floor data turned into priorities and measurable performance. Problems found earlier, decisions made faster.</p>
+          </article>
+          <article>
+            <h3>In-house manufacturing engineering</h3>
+            <p>Workholding, tooling strategy, programming, inspection, and documented prove-out, engineered here. First article to full production, same result.</p>
+          </article>
+        </div>
       </div>
-      <p class="intro">"Technology" is in our name because it is how we operate: collaborative automation, mill-turn equipment, advanced inspection, and the systems that connect them. Faster, more repeatable, more capable, every year.</p>
     </div>
-    <div class="tech-grid">
-      <article>
-        <h3>Robotic technology deployment</h3>
-        <p>Robotics deployed in production. Consistent, repeatable output.</p>
-      </article>
-      <article>
-        <h3>Advanced sub-spindle CNC technology</h3>
-        <p>Both ends of the part in one controlled cycle. Fewer setups, less stacked variation, finished parts off the machine.</p>
-      </article>
-      <article>
-        <h3>AI-enabled manufacturing</h3>
-        <p>Shop-floor data turned into priorities and measurable performance. Problems found earlier, decisions made faster.</p>
-      </article>
-      <article>
-        <h3>In-house manufacturing engineering</h3>
-        <p>Workholding, tooling strategy, programming, inspection, and documented prove-out, engineered here. First article to full production, same result.</p>
-      </article>
-    </div>
-<div class="fx-diptych" aria-label="From raw material to finished parts"><figure><span class="fx-img"><img src="img-raw-stock.jpg" alt="Copper-alloy bar stock cut to length, each piece hand-marked with its work-order number before machining" width="1600" height="1044" loading="lazy"></span></figure><figure><span class="arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span><span class="fx-img"><img src="img-parts-bars.jpg" alt="Rows of identical CNC-machined copper-alloy bars with milled pockets, a repeat-production run at Fifty X Technology" width="1600" height="1200" loading="lazy"></span></figure></div>
     <div class="quote">
       <div class="eyebrow">Why we invest</div>
       <div>
@@ -791,6 +811,6 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
 <script>
 </script>
 <script>(function(){var r=document.getElementById("name-change");if(r&&new Date()>new Date(2027,0,1)){r.remove();var l=document.querySelector('a[href="#name-change"]');if(l&&l.parentNode)l.parentNode.remove();}})();</script>
-<script src="fx.js?v=32" defer></script>
+<script src="fx.js?v=33" defer></script>
 </body>
 </html>

@@ -11,7 +11,7 @@
   function prog(){var h=root.scrollHeight-innerHeight; barb.style.transform='scaleX('+(h>0?Math.min(1,scrollY/h):0)+')';}
 
   /* ---------- reveal on scroll ---------- */
-  var RV=['.head','.hero .wrap>*','.cred .cell','.cap','.ind>*','.svc>*','.tech-grid article','.quote','.timeline li','.about-grid>*','.namechange','.wallshot','.contact-grid>*','.careers',
+  var RV=['.head','.hero .wrap>*','.cred .cell','.cap','.ind>*','.svc>*','.tech-grid article','.tech-photo','.quote','.timeline li','.about-grid>*','.namechange','.wallshot','.contact-grid>*','.careers',
     '.capgrid article','.materials>*','.banner','.mosaic>*','.fac-note>div','.qgrid>*','.qlist>div','.turnkey-d>*','.svc-dark li','.ways article','.send',
     '.stats>div','.pillars>*','.platforms>article','.remold-grid>*','.swatches li','.caps>*','.fleet>*','.faq details','.closer .wrap>*',
     '.twoup>*','.families a','.fam>*','.feature','.trio figure','.spear>*','.housings>*','.alloys','.callout','.welds-head>*','.welds figure','.ms-head>*','.parts li',
@@ -96,7 +96,7 @@
   function openLb(img,cap){lbi.src=img.currentSrc||img.src; lbi.alt=img.alt||''; lbc.textContent=cap||img.alt||''; lb.classList.add('open'); doc.body.style.overflow='hidden';}
   function closeLb(){lb.classList.remove('open'); doc.body.style.overflow='';}
   lb.addEventListener('click',closeLb); doc.addEventListener('keydown',function(e){if(e.key==='Escape') closeLb();});
-  $$('.mosaic img,.trio img,.welds img,.housings img,.feature img,.fx-gallery img,.fx-diptych img,.wallshot img,.fx-lb img,.hero-photo img,.spear img,.strip-photo img,.ms-part img').forEach(function(img){
+  $$('.mosaic img,.trio img,.welds img,.housings img,.feature img,.fx-gallery img,.fx-diptych img,.tech-photo img,.wallshot img,.fx-lb img,.hero-photo img,.spear img,.strip-photo img,.ms-part img').forEach(function(img){
     var fig=img.closest('figure'); var wrap=img.parentElement;
     if(!wrap.classList.contains('fx-img')){ var w=doc.createElement('span'); w.className='fx-img'; img.replaceWith(w); w.appendChild(img); wrap=w; }
     if(!img.closest('.ms-part,.spear')&&!wrap.querySelector('.fx-wm')){ var wm=doc.createElement('span'); wm.className='fx-wm'; wm.setAttribute('aria-hidden','true'); wm.innerHTML='<svg viewBox="0 0 100 100"><use href="#mark-layer"/></svg>FXT'; wrap.appendChild(wm); }
