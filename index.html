@@ -237,12 +237,12 @@ p{margin:0}
 .tech-photo .fx-wm{z-index:4}
 .tech-photo figcaption{padding-right:110px}
 .tech-body{padding-top:clamp(8px,1.5vw,24px)}
-.tech-body h2{font-size:clamp(44px,6.4vw,96px);line-height:.92;letter-spacing:-.03em;margin:14px 0 0 calc(-1 * clamp(48px,11vw,180px));color:#fff;mix-blend-mode:difference;position:relative}
+.tech-body h2{font-size:clamp(36px,4.8vw,68px);line-height:.95;letter-spacing:-.025em;margin:14px 0 0}
 .tech-body .intro{margin-top:clamp(24px,2.5vw,36px);font-size:clamp(16px,1.25vw,18px);line-height:1.65;color:var(--slate);max-width:58ch}
 .tech-body .tech-grid{grid-template-columns:1fr 1fr;margin-top:clamp(32px,4vw,56px)}
 .tech-body .tech-grid article:nth-child(2n){margin-right:0}
 .tech-body .tech-grid article{padding-bottom:20px}
-@media (max-width:1000px){.tech-layout{grid-template-columns:1fr}.tech-photo{max-width:560px}.tech-body h2{margin-left:0;color:var(--ink);mix-blend-mode:normal}}
+@media (max-width:1000px){.tech-layout{grid-template-columns:1fr}.tech-photo{max-width:560px}}
 @media (max-width:560px){.tech-body .tech-grid{grid-template-columns:1fr}.tech-body .tech-grid article{margin-right:0}}
 .tech-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--hair-l)}
 .tech-grid article{padding:28px 24px 8px 0;border-top:3px solid var(--ink);margin-top:-1px;margin-right:24px}
@@ -369,8 +369,10 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
 @media (max-width:900px){.partner{grid-template-columns:1fr}}
 .eff .ghost{font-family:var(--display);font-stretch:112.5%;font-weight:700;font-size:clamp(56px,10.5vw,156px);line-height:.9;letter-spacing:-.02em;color:transparent;-webkit-text-stroke:1.5px #34393E;white-space:nowrap;user-select:none;margin:-.1em 0 clamp(20px,3vw,40px) -.03em}
 @media (max-width:600px){.eff .ghost{font-size:16vw;white-space:normal;line-height:.95}}
-.eff .head{align-items:start}
-.eff .head h2{font-size:clamp(36px,5vw,72px)}
+.eff-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:32px 64px;align-items:start}
+.eff-grid h2{font-size:clamp(36px,5vw,72px)}
+.eff-grid .intro{font-size:clamp(16px,1.25vw,18px);line-height:1.65;color:var(--steel);max-width:60ch}
+@media (max-width:900px){.eff-grid{grid-template-columns:1fr}}
 .missions{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hair-d);border:1px solid var(--hair-d)}
 .missions article{background:var(--graphite);padding:28px 26px 26px;display:flex;flex-direction:column;gap:12px;min-height:100%}
 .missions .mono{color:var(--steel-2)}
@@ -378,17 +380,11 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
 .missions p{font-size:14.5px;line-height:1.62;color:var(--steel);margin:0}
 .missions .tag{margin-top:auto;padding-top:14px;border-top:1px solid var(--hair-d);font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--paper)}
 @media (max-width:900px){.missions{grid-template-columns:1fr}}
-.principles{margin-top:clamp(48px,6vw,80px);display:grid;grid-template-columns:1fr;gap:24px;align-items:start;padding-top:clamp(28px,3vw,40px);border-top:1px solid var(--hair-d)}
-.principles .intro-d{margin-top:14px;color:var(--steel);line-height:1.65;font-size:15.5px;max-width:44ch}
-.p-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--hair-d);border:1px solid var(--hair-d)}
-.p-list li{background:var(--ink);padding:26px 24px 30px;display:flex;flex-direction:column;gap:16px;min-height:150px;justify-content:space-between;transition:background .3s}
-.p-list li:hover{background:var(--graphite)}
+.p-list{list-style:none;margin:clamp(28px,3vw,44px) 0 0;padding:0;border-top:1px solid var(--hair-d);max-width:60ch}
+.p-list li{display:grid;grid-template-columns:40px 1fr;gap:16px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--hair-d)}
 .p-list .n{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--steel-2)}
-.p-list b{font-family:var(--display);font-stretch:112.5%;font-weight:600;font-size:clamp(18px,1.6vw,23px);line-height:1.18;text-wrap:balance}
-.p-list p{margin:0;font-size:14px;line-height:1.6;color:var(--steel);grid-column:2}
-@media (max-width:900px){.principles{grid-template-columns:1fr}}
-@media (max-width:900px){.p-list{grid-template-columns:1fr 1fr}}
-@media (max-width:560px){.p-list{grid-template-columns:1fr}.p-list li{min-height:0}}
+.p-list b{font-family:var(--display);font-stretch:112.5%;font-weight:600;font-size:clamp(18px,1.5vw,22px);line-height:1.2}
+
 .founder{margin-top:clamp(48px,6vw,80px);display:grid;grid-template-columns:minmax(0,2fr) minmax(0,10fr);gap:24px 48px;align-items:start;border-top:1px solid var(--hair-d);padding-top:clamp(28px,3vw,40px)}
 .founder blockquote{margin:0;font-family:var(--display);font-stretch:112.5%;font-weight:500;font-size:clamp(19px,2vw,27px);line-height:1.35;text-wrap:balance;max-width:34em}
 .founder cite{display:block;font-style:normal;margin-top:18px;font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel)}
@@ -404,15 +400,22 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
 .turnkey-line:hover .go svg{transform:translateX(4px)}
 @media (max-width:900px){.turnkey-line{grid-template-columns:1fr}}
 
-/* ---------- industries: word cloud ---------- */
-.ind-cloud{display:flex;flex-wrap:wrap;align-items:center;gap:.18em .34em;font-family:var(--display);font-stretch:112.5%;font-weight:700;font-size:clamp(30px,4.3vw,62px);line-height:1.08;letter-spacing:-.025em;margin-top:clamp(0px,1vw,12px)}
-.ind-cloud .w{color:transparent;-webkit-text-stroke:1.2px #5A6066;text-decoration:none;text-wrap:nowrap;transition:color .35s,-webkit-text-stroke-color .35s,transform .5s cubic-bezier(.2,.8,.2,1);cursor:default}
-.ind-cloud a.w{cursor:pointer}
-.ind-cloud .x{width:.42em;height:.42em;fill:#3A3F45;margin:0 .1em;flex:none;transition:fill .35s}
-.ind-cloud .w:hover,.ind-cloud .w:focus-visible{color:var(--paper);-webkit-text-stroke-color:var(--paper);outline:0}
-.ind-cloud:hover .x{fill:#5A6066}
-@media (max-width:560px){.ind-cloud{font-size:10.5vw;gap:.12em 0;flex-direction:column;align-items:flex-start}.ind-cloud .w{text-wrap:balance;-webkit-text-stroke-width:1px}.ind-cloud .x{display:none}}
-@media (prefers-reduced-motion:reduce){.ind-cloud .w{transition:none}}
+/* ---------- industries: list with icons ---------- */
+.ind-head{align-items:start;margin-bottom:0}
+.ind-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--hair-d)}
+.ind-list>li{border-bottom:1px solid var(--hair-d)}
+.ind-list>li,.ind-list>li>a{display:grid;grid-template-columns:44px 1fr auto;gap:0 22px;align-items:center}
+.ind-list>li{padding:20px 0}
+.ind-list>li:has(>a){padding:0;display:block}
+.ind-list>li>a{padding:20px 0;color:inherit;text-decoration:none}
+.ind-list .ic{width:30px;height:30px;color:var(--steel-2);transition:color .3s,transform .5s cubic-bezier(.2,.8,.2,1)}
+.ind-list span{font-family:var(--display);font-stretch:112.5%;font-weight:600;font-size:clamp(18px,1.6vw,23px);line-height:1.15;color:var(--steel);transition:color .3s,transform .5s cubic-bezier(.2,.8,.2,1)}
+.ind-list .go{width:16px;height:16px;color:var(--steel-2);opacity:0;transform:translateX(-6px);transition:opacity .3s,transform .4s}
+.ind-list>li:hover .ic,.ind-list>li:hover span{color:var(--paper)}
+.ind-list>li:hover .ic{transform:scale(1.12)}
+.ind-list>li:hover span{transform:translateX(4px)}
+.ind-list>li:hover .go{opacity:1;transform:none;color:var(--paper)}
+@media (max-width:900px){.ind-head{grid-template-columns:1fr}.ind-list{margin-top:8px}}
 </style>
 
 </head>
@@ -461,7 +464,6 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
       <p class="lede"><b>Whatever the mission demands.</b> Every manufacturing challenge comes with a different set of priorities. Sometimes precision is paramount. Sometimes it's lead time, cost, or the ability to solve a problem that doesn't fit a conventional process. Fifty X was built to understand those differences and respond accordingly, combining advanced manufacturing capabilities, technical expertise, and accountable execution to deliver what matters most.</p>
       <div class="actions">
         <a class="btn btn-solid" href="#contact">Request a quote <svg><use href="#arrow"/></svg></a>
-        <a class="btn btn-ghost" href="#effectiveness">Our philosophy <svg><use href="#arrow"/></svg></a>
       </div>
     </div>
     <div class="hero-mark" aria-hidden="true">
@@ -565,18 +567,18 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
 <!-- ================= INDUSTRIES ================= -->
 <section class="section" id="industries">
   <div class="wrap">
-    <div class="head">
+    <div class="head ind-head">
       <div>
         <div class="eyebrow">Industries</div>
         <h2 style="margin-top:14px">Where the standard goes,<br>we go.</h2>
       </div>
-    </div>
-    <div class="ind-cloud" aria-label="Industries served">
-      <a class="w" href="#mwd">Energy</a><svg class="x" aria-hidden="true"><use href="#mark-layer"/></svg>
-      <span class="w">Aerospace &amp; Defense</span><svg class="x" aria-hidden="true"><use href="#mark-layer"/></svg>
-      <span class="w">Robotics &amp; Automation</span><svg class="x" aria-hidden="true"><use href="#mark-layer"/></svg>
-      <span class="w">Industrial &amp; Fluid Handling</span><svg class="x" aria-hidden="true"><use href="#mark-layer"/></svg>
-      <span class="w">Geothermal</span>
+      <ul class="ind-list" aria-label="Industries served">
+        <li><a href="#mwd"><svg class="ic" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 2v27M9 29h14M16 2l-8 24M16 2l8 24M11 13h10M9 20h14M16 29l-3 1M16 29l3 1"/></svg><span>Energy – MWD &amp; Directional Drilling</span><svg class="go"><use href="#arrow"/></svg></a></li>
+        <li><svg class="ic" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3l3 10 10 6v3l-10-3v5l3 3v2l-6-2-6 2v-2l3-3v-5L3 22v-3l10-6z"/></svg><span>Aerospace &amp; Defense</span></li>
+        <li><svg class="ic" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 29h24M8 29v-6h6v6M11 23l3-9M14 14l8-6M22 8l3 3M21 9l-2-2M9 13a2 2 0 1 0 4 0 2 2 0 1 0-4 0M26 11l-3 3"/></svg><span>Robotics &amp; Automation</span></li>
+        <li><svg class="ic" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l10 5-10 5zM29 11l-10 5 10 5zM13 16h6M16 16V7M11 7h10M3 26h26"/></svg><span>Industrial &amp; Fluid Handling</span></li>
+        <li><svg class="ic" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 29h26M3 22h26M3 15h26M12 15c0-4 3-4 3-8s-3-4-3-8M20 15c0-4 3-4 3-8s-3-4-3-8"/></svg><span>Geothermal &amp; Subsurface Energy</span></li>
+      </ul>
     </div>
   </div>
 </section>
@@ -618,7 +620,7 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
       </figure>
       <div class="tech-body">
         <div class="eyebrow">Technology &amp; continuous improvement</div>
-        <h2>Never<br>complacent.</h2>
+        <h2>Never complacent.</h2>
         <p class="intro">"Technology" is in our name because it is how we operate: collaborative automation, mill-turn equipment, advanced inspection, and the systems that connect them. Faster, more repeatable, more capable, every year.</p>
         <div class="tech-grid">
           <article>
@@ -655,7 +657,7 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
   <div class="wrap">
     <div class="eff" id="effectiveness">
     <div class="ghost" aria-hidden="true">EFFECTIVENESS</div>
-    <div class="head">
+    <div class="eff-grid">
       <div>
         <div class="eyebrow">About Fifty X Technology</div>
         <h2 style="margin-top:14px">Effectiveness<br>above all.</h2>
@@ -663,19 +665,13 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
       <div>
         <p class="intro">Every customer has different priorities, and those priorities change with the situation. Sometimes cost is everything. Other times equipment is down, a deadline is closing in, or a problem has already beaten someone else. In those moments the cheapest price can be the least important thing on the table.</p>
         <p class="intro" style="margin-top:14px">We built Fifty X to understand that difference and adapt to it. Being a good manufacturer means finding out what actually matters to the customer, rather than assuming we already know.</p>
+        <ol class="p-list">
+          <li><span class="n">01</span><b>Understand before executing.</b></li>
+          <li><span class="n">02</span><b>Adapt without compromising integrity.</b></li>
+          <li><span class="n">03</span><b>Own the outcome.</b></li>
+          <li><span class="n">04</span><b>Make effectiveness repeatable.</b></li>
+        </ol>
       </div>
-    </div>
-
-    <div class="principles">
-      <div class="p-head">
-        <div class="eyebrow">The four principles</div>
-      </div>
-      <ol class="p-list">
-        <li><span class="n">01</span><b>Understand before executing.</b></li>
-        <li><span class="n">02</span><b>Adapt without compromising integrity.</b></li>
-        <li><span class="n">03</span><b>Own the outcome.</b></li>
-        <li><span class="n">04</span><b>Make effectiveness repeatable.</b></li>
-      </ol>
     </div>
 
     <div class="founder">
