@@ -384,6 +384,35 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
 .turnkey-line:hover .v{color:var(--slate)}
 .turnkey-line:hover .go svg{transform:translateX(4px)}
 @media (max-width:900px){.turnkey-line{grid-template-columns:1fr}}
+
+/* ---------- industries: expanding row ---------- */
+.ind-row{display:flex;gap:1px;background:var(--hair-d);border:1px solid var(--hair-d);height:clamp(400px,38vw,520px)}
+.ind-row>*{flex:1 1 0;min-width:0;position:relative;overflow:hidden;background:var(--ink);color:var(--paper);text-decoration:none;display:flex;flex-direction:column;justify-content:flex-end;padding:26px 24px 28px;isolation:isolate;transition:flex .7s cubic-bezier(.2,.8,.2,1),background .4s}
+.ind-row>*::before{content:"";position:absolute;inset:0;z-index:-2;background:repeating-linear-gradient(135deg,transparent 0 10px,rgba(255,255,255,.055) 10px 11px);transform:translateY(102%);transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.ind-row>*::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:0;background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.12),transparent 60%);transition:opacity .4s}
+.ind-row .num{position:absolute;top:18px;left:22px;font-family:var(--display);font-stretch:112.5%;font-weight:700;font-size:clamp(44px,5vw,72px);line-height:1;color:transparent;-webkit-text-stroke:1.2px #3A3F45;transition:transform .7s cubic-bezier(.2,.8,.2,1),-webkit-text-stroke-color .4s}
+.ind-row .body{display:block;position:relative}
+.ind-row h3{font-size:clamp(17px,1.4vw,21px);line-height:1.15;text-wrap:balance;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.ind-row p{margin:0;font-size:14px;line-height:1.58;color:var(--steel);max-width:34ch;max-height:0;opacity:0;transform:translateY(10px);overflow:hidden;transition:max-height .7s cubic-bezier(.2,.8,.2,1),opacity .45s .12s,transform .6s .08s,margin .6s}
+.ind-row .more{display:inline-flex;align-items:center;gap:10px;margin-top:14px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--paper);opacity:0;transform:translateY(8px);transition:opacity .4s .2s,transform .5s .2s}
+.ind-row .more svg{width:14px;height:14px}
+.ind-row>*:hover,.ind-row>*:focus-visible,.ind-row>*.on{flex:2.6 1 0;background:var(--graphite);outline:0}
+.ind-row>*:hover::before,.ind-row>*.on::before{transform:translateY(0)}
+.ind-row>*:hover::after,.ind-row>*.on::after{opacity:1}
+.ind-row>*:hover .num,.ind-row>*.on .num{transform:scale(1.9) translate(10%,6%);-webkit-text-stroke-color:#6B7177}
+.ind-row>*:hover p,.ind-row>*.on p{max-height:200px;opacity:1;transform:none;margin-top:14px}
+.ind-row>*:hover .more,.ind-row>*.on .more{opacity:1;transform:none}
+.ind-row>*:not(:hover) h3{transform:none}
+@media (max-width:900px){
+  .ind-row{flex-direction:column;height:auto}
+  .ind-row>*{flex:1 1 auto;padding:22px 20px 24px;min-height:0}
+  .ind-row>*:hover,.ind-row>*.on{flex:1 1 auto}
+  .ind-row .num{position:static;font-size:28px;margin-bottom:10px;-webkit-text-stroke-color:#555B60}
+  .ind-row>*:hover .num,.ind-row>*.on .num{transform:none}
+  .ind-row p{max-height:none;opacity:1;transform:none;margin-top:10px}
+  .ind-row .more{opacity:1;transform:none}
+}
+@media (prefers-reduced-motion:reduce){.ind-row>*,.ind-row>*::before,.ind-row .num,.ind-row p,.ind-row .more{transition:none}}
 </style>
 
 </head>
@@ -543,26 +572,26 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
       </div>
       <p class="intro">Our standard was forged in one of the hardest environments on earth: the bottom of a directional well. That is the foundation, not the ceiling. Every industry on this list has a different definition of success. The discipline of finding out which one, and delivering it, is the same.</p>
     </div>
-    <div class="ind">
-      <a class="foundation" href="#mwd">
-        <div><h3>Energy – MWD &amp; Directional Drilling</h3></div>
-        <p>The industry that built us and the one we know best. Specialists, not generalists. →</p>
+    <div class="ind-row" aria-label="Industries served">
+      <a href="#mwd" style="--i:1">
+        <span class="num" aria-hidden="true">01</span>
+        <span class="body"><h3>Energy – MWD &amp; Directional Drilling</h3><p>The industry that built us and the one we know best. Specialists, not generalists.</p><span class="more">MWD &amp; directional <svg><use href="#arrow"/></svg></span></span>
       </a>
-      <div>
-        <div><h3>Aerospace &amp; Defense</h3></div>
-        <p>SAM-registered and JCP-certified. Delivering on DLA contracts today. Ready for the primes' supply chains.</p>
+      <div style="--i:2">
+        <span class="num" aria-hidden="true">02</span>
+        <span class="body"><h3>Aerospace &amp; Defense</h3><p>SAM-registered and JCP-certified. Delivering on DLA contracts today. Ready for the primes' supply chains.</p></span>
       </div>
-      <div>
-        <div><h3>Robotics &amp; Automation</h3></div>
-        <p>Precision structural and motion components for the machines we're also putting on our own floor.</p>
+      <div style="--i:3">
+        <span class="num" aria-hidden="true">03</span>
+        <span class="body"><h3>Robotics &amp; Automation</h3><p>Precision structural and motion components for the machines we're also putting on our own floor.</p></span>
       </div>
-      <div>
-        <div><h3>Industrial &amp; Fluid Handling</h3></div>
-        <p>Machined-and-bonded seals, sleeves, and wear components for pumps, valves, and rotating equipment.</p>
+      <div style="--i:4">
+        <span class="num" aria-hidden="true">04</span>
+        <span class="body"><h3>Industrial &amp; Fluid Handling</h3><p>Machined-and-bonded seals, sleeves, and wear components for pumps, valves, and rotating equipment.</p></span>
       </div>
-      <div>
-        <div><h3>Geothermal &amp; Subsurface Energy</h3></div>
-        <p>Downhole heat and pressure know-how applied to the next generation of subsurface power.</p>
+      <div style="--i:5">
+        <span class="num" aria-hidden="true">05</span>
+        <span class="body"><h3>Geothermal &amp; Subsurface Energy</h3><p>Downhole heat and pressure know-how applied to the next generation of subsurface power.</p></span>
       </div>
     </div>
   </div>
@@ -835,6 +864,13 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
 })();
 </script>
 
+<script>
+(function(){var r=document.querySelector('.ind-row');if(!r)return;var fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
+r.querySelectorAll(':scope>*').forEach(function(el){
+  el.addEventListener('pointermove',function(e){var b=el.getBoundingClientRect();el.style.setProperty('--mx',((e.clientX-b.left)/b.width*100).toFixed(1)+'%');el.style.setProperty('--my',((e.clientY-b.top)/b.height*100).toFixed(1)+'%');});
+  if(!fine){el.addEventListener('click',function(e){if(el.tagName==='A')return;var on=el.classList.contains('on');r.querySelectorAll('.on').forEach(function(x){x.classList.remove('on')});if(!on)el.classList.add('on');});}
+});})();
+</script>
 <script src="fx.js?v=32" defer></script>
 </body>
 </html>
