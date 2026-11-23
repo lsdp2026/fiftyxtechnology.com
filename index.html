@@ -389,6 +389,29 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
 @media (prefers-reduced-motion:no-preference){.usa .flag{animation:usa-sheen 7s ease-in-out infinite}@keyframes usa-sheen{0%,70%{background-position:-160% 0,0 0}100%{background-position:160% 0,0 0}}}
 .usa p{margin:clamp(20px,2.4vw,32px) auto 0;max-width:72ch;font-size:clamp(15.5px,1.2vw,17.5px);line-height:1.65;color:var(--steel)}
 @media (max-width:560px){.usa h3{font-size:9vw}}
+/* ---------- defense block ---------- */
+.def{margin-bottom:clamp(56px,7vw,96px);padding-bottom:clamp(40px,5vw,64px);border-bottom:1px solid var(--hair-d)}
+.def-top{display:grid;grid-template-columns:auto 1fr;gap:24px clamp(24px,3vw,44px);align-items:center;margin-bottom:clamp(28px,3.5vw,44px)}
+.camo-x{width:clamp(72px,8vw,112px);height:clamp(72px,8vw,112px);flex:none;filter:drop-shadow(0 0 0 transparent);transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.def:hover .camo-x{transform:scale(1.04)}
+.def h3{font-family:var(--display);font-stretch:112.5%;font-weight:600;font-size:clamp(22px,2.4vw,34px);line-height:1.08;letter-spacing:-.02em;margin-top:12px}
+.def-top p{margin:12px 0 0;font-size:15px;line-height:1.6;color:var(--steel);max-width:58ch}
+.def-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--hair-d);border:1px solid var(--hair-d)}
+.def-grid>div{background:var(--ink);padding:18px 20px 20px;margin:0}
+.def-grid dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--steel-2)}
+.def-grid dd{margin:8px 0 0;font-family:var(--display);font-stretch:112.5%;font-weight:600;font-size:clamp(15px,1.25vw,19px);letter-spacing:.01em;color:var(--paper)}
+.def-grid .copy{all:unset;cursor:pointer;font:inherit;color:inherit;border-bottom:1px dashed var(--steel-2);padding-bottom:1px;position:relative}
+.def-grid .copy:hover{border-bottom-color:var(--paper)}
+.def-grid .copy.done::after{content:"Copied";position:absolute;left:0;top:-20px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--paper)}
+@media (max-width:900px){.def-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.def-top{grid-template-columns:1fr}.def-grid{grid-template-columns:1fr}}
+.tech-in-caps{margin-top:clamp(56px,7vw,96px);padding-top:clamp(40px,5vw,64px);border-top:1px solid var(--hair-l)}
+.about-tech{margin-top:clamp(56px,7vw,96px);padding-top:clamp(40px,5vw,64px);border-top:1px solid var(--hair-d)}
+.about-tech .tech-body h2{color:var(--paper);font-size:clamp(26px,3vw,42px);text-wrap:balance;max-width:16em}
+.about-tech .tech-body .intro{color:var(--steel)}
+.about-tech .tech-photo{align-self:start}
+@media (min-width:1001px){.about-tech .tech-photo .fx-img{aspect-ratio:4/5;height:auto}}
+.about-tech .tech-body{align-self:center}
 /* ---------- industries: list with icons ---------- */
 .ind-head{align-items:start;margin-bottom:0}
 .ind-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--hair-d)}
@@ -434,7 +457,6 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
       <a href="mwd.html">MWD Components</a>
       <a href="centralizers.html">Centralizers</a>
       <a href="#industries">Industries</a>
-      <a href="#technology">Technology</a>
       <a href="#about">About</a>
       <a class="cta" href="#contact">Request a Quote</a>
     </nav>
@@ -554,12 +576,61 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
       </div>
     </aside>
 
+    <div class="tech-in-caps">
+      <div class="head" style="margin-bottom:clamp(24px,3vw,40px)">
+        <div>
+          <div class="eyebrow">Technology &amp; continuous improvement</div>
+          <h2 style="margin-top:14px">Never complacent.</h2>
+        </div>
+        <p class="intro">"Technology" is in our name because it is how we operate: collaborative automation, mill-turn equipment, advanced inspection, and the systems that connect them. Faster, more repeatable, more capable, every year.</p>
+      </div>
+    <div class="tech-grid">
+      <article>
+        <h3>Robotic technology deployment</h3>
+        <p>Robotics deployed in production. Consistent, repeatable output.</p>
+      </article>
+      <article>
+        <h3>Advanced sub-spindle CNC technology</h3>
+        <p>Both ends of the part in one controlled cycle. Fewer setups, less stacked variation, finished parts off the machine.</p>
+      </article>
+      <article>
+        <h3>AI-enabled manufacturing</h3>
+        <p>Shop-floor data turned into priorities and measurable performance. Problems found earlier, decisions made faster.</p>
+      </article>
+      <article>
+        <h3>In-house manufacturing engineering</h3>
+        <p>Workholding, tooling strategy, programming, inspection, and documented prove-out, engineered here. First article to full production, same result.</p>
+      </article>
+    </div>
+    </div>
+
   </div>
 </section>
 
 <!-- ================= INDUSTRIES ================= -->
 <section class="section" id="industries">
   <div class="wrap">
+    <div class="def" id="defense">
+      <div class="def-top">
+        <svg class="camo-x" viewBox="0 0 100 100" aria-hidden="true"><defs><pattern id="camo" patternUnits="userSpaceOnUse" width="60" height="60"><rect width="60" height="60" fill="#4A523C"/><path d="M36.3 9.1 L27.0 15.4 L22.0 23.4 L10.6 24.4 L9.1 12.8 L10.3 5.7 L13.0 -2.2 L21.4 -2.0 L30.3 -0.1Z" fill="#3B4A2F"/><path d="M24.9 33.9 L16.6 44.9 L6.2 48.7 L-7.3 52.7 L-6.8 37.7 L-15.5 27.0 L-3.4 22.0 L5.7 22.0 L12.6 26.3Z" fill="#52603F"/><path d="M28.8 49.0 L24.4 53.9 L19.7 55.9 L12.9 58.7 L8.9 52.5 L8.5 45.3 L13.6 40.5 L20.3 39.1 L27.5 41.4Z" fill="#52603F"/><path d="M41.6 55.4 L37.8 63.7 L29.6 64.6 L22.0 65.7 L17.1 59.4 L14.5 50.5 L21.4 44.0 L29.6 45.9 L39.5 45.7Z" fill="#6E6A4E"/><path d="M26.2 25.1 L17.7 34.0 L10.4 44.2 L1.9 34.0 L-7.2 30.3 L-9.5 19.1 L-1.9 9.6 L9.3 12.3 L17.1 16.7Z" fill="#6E6A4E"/><path d="M41.5 47.8 L36.5 53.4 L31.5 57.6 L26.7 53.1 L20.3 51.3 L20.6 44.5 L23.8 37.4 L31.7 37.1 L35.6 43.0Z" fill="#3B4A2F"/><path d="M30.8 40.1 L30.2 46.0 L24.6 48.5 L19.7 46.0 L16.3 42.6 L13.8 36.7 L19.2 33.3 L25.1 29.3 L29.7 34.7Z" fill="#23281F"/><path d="M23.0 24.1 L20.2 32.7 L11.5 32.9 L5.0 32.8 L1.0 27.4 L-2.7 19.5 L3.0 11.9 L11.4 16.2 L16.3 18.8Z" fill="#6E6A4E"/><path d="M23.5 14.0 L21.9 20.7 L15.5 23.1 L7.6 25.0 L1.4 18.6 L3.8 10.3 L9.4 6.1 L16.6 -1.2 L26.4 3.5Z" fill="#52603F"/><path d="M50.5 44.4 L47.9 51.6 L40.8 53.0 L32.7 55.9 L31.4 47.3 L31.4 41.5 L34.5 36.0 L40.9 35.3 L47.5 37.5Z" fill="#52603F"/><path d="M15.8 0.0 L11.1 6.7 L4.3 6.6 L-0.7 6.6 L-5.1 3.0 L-6.7 -3.6 L-3.2 -10.9 L4.9 -10.1 L10.4 -6.0Z" fill="#3B4A2F"/><path d="M23.2 29.3 L15.9 36.8 L9.0 41.0 L-0.4 42.0 L-6.0 34.0 L-12.1 22.4 L0.6 18.4 L8.8 18.5 L23.5 15.3Z" fill="#23281F"/><path d="M46.9 8.8 L40.1 15.9 L34.2 22.7 L27.1 16.7 L16.7 14.3 L19.5 4.3 L23.4 -5.5 L33.7 -2.6 L39.6 2.1Z" fill="#3B4A2F"/><path d="M49.1 30.2 L46.5 41.9 L35.4 46.9 L24.2 44.5 L16.8 35.9 L17.5 24.7 L27.0 20.6 L34.9 16.6 L41.9 22.3Z" fill="#52603F"/><path d="M10.1 1.7 L10.5 9.0 L3.4 11.0 L-4.7 12.9 L-9.8 5.9 L-7.2 -1.6 L-5.4 -10.6 L3.0 -5.7 L7.6 -3.3Z" fill="#8C8F7C"/><path d="M43.5 20.3 L37.5 28.1 L30.6 33.7 L20.7 33.2 L20.0 23.3 L15.3 15.6 L20.3 6.5 L30.8 5.7 L39.3 10.9Z" fill="#52603F"/><path d="M39.3 10.7 L43.7 23.3 L31.7 27.7 L21.4 23.3 L12.3 16.7 L18.8 7.1 L23.0 0.9 L32.2 -9.0 L36.3 4.3Z" fill="#8C8F7C"/><path d="M52.4 27.9 L49.6 39.8 L38.1 43.0 L29.3 38.6 L22.1 32.8 L25.9 24.4 L30.9 20.1 L38.6 9.9 L47.1 18.1Z" fill="#52603F"/><path d="M46.3 56.0 L38.9 62.1 L33.3 65.7 L26.5 64.9 L22.4 59.4 L19.7 51.7 L26.6 47.4 L33.5 44.9 L38.4 50.3Z" fill="#6E6A4E"/><path d="M69.4 21.2 L64.0 29.1 L57.2 35.9 L46.9 34.5 L46.2 24.3 L46.0 18.1 L48.5 10.6 L57.3 6.1 L65.7 11.9Z" fill="#52603F"/><path d="M45.9 46.6 L45.0 53.7 L38.2 56.4 L32.3 53.8 L27.4 49.9 L27.2 43.2 L30.8 36.6 L37.7 39.7 L44.2 40.1Z" fill="#6E6A4E"/><path d="M29.2 16.6 L22.5 23.0 L18.2 35.2 L9.8 25.5 L2.7 21.0 L-3.6 9.9 L7.0 2.9 L16.9 5.2 L24.4 8.6Z" fill="#52603F"/><path d="M44.8 48.4 L42.6 58.6 L33.3 64.6 L25.3 57.5 L18.2 52.9 L15.0 42.8 L22.7 35.0 L32.1 39.2 L37.5 42.5Z" fill="#6E6A4E"/><path d="M34.8 4.4 L33.3 10.1 L27.8 11.8 L20.4 15.0 L13.8 9.0 L15.8 0.5 L21.8 -3.8 L28.0 -4.1 L32.4 -0.6Z" fill="#3B4A2F"/><path d="M35.0 44.8 L35.9 51.3 L29.3 52.0 L22.9 53.8 L16.5 49.0 L20.1 41.9 L23.8 37.3 L29.5 36.7 L33.0 40.6Z" fill="#23281F"/><path d="M33.1 20.3 L31.4 28.2 L23.8 30.5 L13.9 34.2 L13.7 23.3 L7.2 14.9 L17.0 11.8 L24.6 5.2 L28.5 14.8Z" fill="#3B4A2F"/></pattern><clipPath id="camo-clip"><path d="M0 10.8 L0 0 L17 0 L27.8 10.8 Z M0 17 L0 14.2 L31.2 14.2 L40.3 23.3 L6.3 23.3 Z M18.8 35.8 L9.7 26.7 L43.7 26.7 L50 33 L56.3 26.7 L90.3 26.7 L81.2 35.8 Z M31.3 48.3 L22.2 39.2 L77.8 39.2 L68.7 48.3 Z M22.2 60.8 L31.3 51.7 L68.7 51.7 L77.8 60.8 Z M9.7 73.3 L18.8 64.2 L81.2 64.2 L90.3 73.3 L56.3 73.3 L50 67 L43.7 73.3 Z M0 83 L6.3 76.7 L40.3 76.7 L31.2 85.8 L0 85.8 Z M0 100 L0 89.2 L27.8 89.2 L17 100 Z M68.8 85.8 L59.7 76.7 L93.7 76.7 L100 83 L100 85.8 Z M83 100 L72.2 89.2 L100 89.2 L100 100 Z M100 17 L93.7 23.3 L59.7 23.3 L68.8 14.2 L100 14.2 Z M100 0 L100 10.8 L72.2 10.8 L83 0 Z"/></clipPath></defs><rect width="100" height="100" fill="url(#camo)" clip-path="url(#camo-clip)"/></svg>
+        <div>
+          <div class="eyebrow">Defense &amp; government supply</div>
+          <h3>Registered. Certified. Ready to be sourced.</h3>
+          <p>Supporting the people who serve this country is not a market segment to us. It is a responsibility we are proud to carry.</p>
+        </div>
+      </div>
+      <dl class="def-grid">
+        <div><dt>CAGE code</dt><dd><button type="button" class="copy" data-copy="8JPP2">8JPP2</button></dd></div>
+        <div><dt>UEI (SAM.gov)</dt><dd><button type="button" class="copy" data-copy="DP8BSDC81GC3">DP8BSDC81GC3</button></dd></div>
+        <div><dt>SAM registration</dt><dd>Active</dd></div>
+        <div><dt>JCP certification</dt><dd>DD Form 2345</dd></div>
+        <div><dt>NAICS</dt><dd>332710 &nbsp;·&nbsp; 332721 &nbsp;·&nbsp; 336413</dd></div>
+        <div><dt>Quality system</dt><dd>ISO 9001:2015 compliant</dd></div>
+        <div><dt>Ownership</dt><dd>Independent, American-owned</dd></div>
+        <div><dt>Location</dt><dd>Cypress, Texas, USA</dd></div>
+      </dl>
+    </div>
+
     <div class="head ind-head">
       <div>
         <div class="eyebrow">Industries</div>
@@ -604,42 +675,6 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
 
 <div class="plates"></div>
 
-<!-- ================= TECHNOLOGY ================= -->
-<section class="section light tech" id="technology">
-  <div class="wrap">
-    <div class="tech-layout">
-      <figure class="tech-photo">
-        <span class="fx-img"><img src="img-robot.jpg" alt="Collaborative robot above a batch of machined copper-alloy components on the Fifty X Technology production floor" width="1200" height="1500" loading="lazy"></span>
-        <figcaption><span>Collaborative robot &nbsp;·&nbsp; Copper-alloy components</span></figcaption>
-      </figure>
-      <div class="tech-body">
-        <div class="eyebrow">Technology &amp; continuous improvement</div>
-        <h2>Never complacent.</h2>
-        <p class="intro">"Technology" is in our name because it is how we operate: collaborative automation, mill-turn equipment, advanced inspection, and the systems that connect them. Faster, more repeatable, more capable, every year.</p>
-        <div class="tech-grid">
-          <article>
-            <h3>Robotic technology deployment</h3>
-            <p>Robotics deployed in production. Consistent, repeatable output.</p>
-          </article>
-          <article>
-            <h3>Advanced sub-spindle CNC technology</h3>
-            <p>Both ends of the part in one controlled cycle. Fewer setups, less stacked variation, finished parts off the machine.</p>
-          </article>
-          <article>
-            <h3>AI-enabled manufacturing</h3>
-            <p>Shop-floor data turned into priorities and measurable performance. Problems found earlier, decisions made faster.</p>
-          </article>
-          <article>
-            <h3>In-house manufacturing engineering</h3>
-            <p>Workholding, tooling strategy, programming, inspection, and documented prove-out, engineered here. First article to full production, same result.</p>
-          </article>
-        </div>
-      </div>
-    </div>
-    </div>
-  </div>
-</section>
-
 <!-- ================= ABOUT ================= -->
 <section class="section about" id="about">
   <div class="wrap">
@@ -661,8 +696,18 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
         </ol>
       </div>
     </div>
-
     </div>
+
+    <div class="tech-layout about-tech">
+      <figure class="tech-photo">
+        <span class="fx-img"><img src="img-robot.jpg" alt="Collaborative robot above a batch of machined copper-alloy components on the Fifty X Technology production floor" width="1200" height="1500" loading="lazy"></span>
+        <figcaption><span>Collaborative robot &nbsp;·&nbsp; Copper-alloy components</span></figcaption>
+      </figure>
+      <div class="tech-body">
+        <div class="eyebrow">How we build</div>
+        <h2>Technology is how we make effectiveness repeatable.</h2>
+        <p class="intro">Robotics in production. Sub-spindle machining that finishes both ends of a part in one cycle. Shop-floor data turned into priorities. The whole process, from workholding to prove-out, engineered on our own floor. Faster, more repeatable, more capable, every year.</p>
+      </div>
     </div>
 
     <figure class="wallshot"><img src="img-wall.jpg" alt="The Fifty X Technology mark and wordmark painted across the shop wall in Cypress, Texas" width="1885" height="654" loading="lazy"><figcaption><span><b>The wall.</b> Building 3100, Cypress, Texas</span><span>Eight plates. Seven cuts. One standard.</span></figcaption></figure>
@@ -746,7 +791,7 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
       </div>
       <div>
         <h4>Company</h4>
-        <ul><li><a href="#capabilities">Capabilities</a></li><li><a href="cnc.html">CNC Machining</a></li><li><a href="mwd.html">MWD Components</a></li><li><a href="#industries">Industries</a></li><li><a href="centralizers.html">Centralizers</a></li><li><a href="#technology">Technology</a></li><li><a href="#about">About</a></li><li><a href="#name-change">Name change</a></li></ul>
+        <ul><li><a href="#capabilities">Capabilities</a></li><li><a href="cnc.html">CNC Machining</a></li><li><a href="mwd.html">MWD Components</a></li><li><a href="#industries">Industries</a></li><li><a href="centralizers.html">Centralizers</a></li><li><a href="#about">About</a></li><li><a href="#name-change">Name change</a></li></ul>
       </div>
       <div>
         <h4>Contact</h4>
@@ -789,6 +834,7 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
 <script>
 </script>
 <script>(function(){var r=document.getElementById("name-change");if(r&&new Date()>new Date(2027,0,1)){r.remove();var l=document.querySelector('a[href="#name-change"]');if(l&&l.parentNode)l.parentNode.remove();}})();</script>
-<script src="fx.js?v=33" defer></script>
+<script>document.addEventListener('click',function(e){var b=e.target.closest('.def-grid .copy');if(!b||!navigator.clipboard)return;navigator.clipboard.writeText(b.getAttribute('data-copy')).then(function(){b.classList.add('done');setTimeout(function(){b.classList.remove('done')},1400)});});</script>
+<script src="fx.js?v=34" defer></script>
 </body>
 </html>
