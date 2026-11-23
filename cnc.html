@@ -308,20 +308,27 @@ footer{background:var(--ink);border-top:1px solid var(--hair-d);padding-block:56
 @media (max-width:600px){.ghost{font-size:16vw;white-space:normal;line-height:.95}}
 
 /* hero: text + photo panel */
-.cnc-hero .wrap{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(32px,5vw,80px);align-items:center}
+.cnc-hero{position:relative;isolation:isolate}
+.cnc-hero::before{display:none}
+.cnc-hero-bg{position:absolute;inset:0;z-index:-1;overflow:hidden}
+.cnc-hero-bg img{width:100%;height:100%;object-fit:cover;object-position:55% 60%;opacity:.6;
+  mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.35) 30%,#000 62%),linear-gradient(to bottom,#000 70%,transparent);
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.35) 30%,#000 62%);mask-composite:intersect;-webkit-mask-composite:source-in}
+.cnc-hero .wrap{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(32px,5vw,80px);align-items:center;min-height:clamp(520px,58vw,740px)}
 .cnc-hero .lede{color:#B8BEC4}
-.hero-photo{margin:0;position:relative;justify-self:end;width:100%;max-width:520px}
-.hero-photo img{display:block;width:100%;height:clamp(420px,56vw,660px);object-fit:cover;object-position:50% 42%;border:1px solid var(--hair-d)}
-.hero-photo::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(to bottom,transparent 60%,rgba(0,0,0,.55))}
-.hero-photo figcaption{position:absolute;left:18px;bottom:16px;right:18px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--paper);display:flex;flex-direction:column;gap:4px;line-height:1.4}
-.hero-photo figcaption span:last-child{color:var(--steel)}
 @media (max-width:900px){
-  .cnc-hero .wrap{grid-template-columns:1fr}
-  .hero-photo{max-width:none;justify-self:stretch}
-  .hero-photo img{height:clamp(360px,80vw,520px)}
+  .cnc-hero .wrap{grid-template-columns:1fr;min-height:0}
+  .cnc-hero-bg img{opacity:.28;object-position:50% 50%;mask-image:linear-gradient(to bottom,#000 40%,transparent);-webkit-mask-image:linear-gradient(to bottom,#000 40%,transparent)}
 }
 @media (prefers-reduced-motion:no-preference){
-  .hero-photo img{animation:ph-in 1.4s ease-out both}
+  .cnc-hero-bg img{animation:bg-in 1.6s ease-out both}
+  @keyframes bg-in{from{opacity:0;transform:scale(1.04)}to{transform:none}}
+  @media (max-width:900px){@keyframes bg-in{from{opacity:0;transform:scale(1.04)}to{opacity:.28;transform:none}}}
+}
+@media (max-width:900px){
+  .cnc-hero .wrap{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:no-preference){
   @keyframes ph-in{from{opacity:0;transform:scale(1.03)}to{opacity:1;transform:none}}
 }
 .cred .v{font-size:15px;line-height:1.3}
@@ -477,6 +484,7 @@ figcaption .mono{color:var(--paper);margin-right:10px}
 
 <!-- ================= HERO ================= -->
 <section class="hero cnc-hero">
+  <div class="cnc-hero-bg" aria-hidden="true"><img src="img-cnc-aisle.jpg" alt="" width="1920" height="986"></div>
   <div class="wrap">
     <div>
       <div class="eyebrow">CNC Machining &nbsp;·&nbsp; Multi-axis &nbsp;·&nbsp; Robotics &nbsp;·&nbsp; Difficult materials &nbsp;·&nbsp; Cypress, Texas</div>
@@ -487,10 +495,7 @@ figcaption .mono{color:var(--paper);margin-right:10px}
         <a class="btn btn-ghost" href="#facility">See the facility <svg><use href="#arrow"/></svg></a>
       </div>
     </div>
-    <figure class="hero-photo">
-      <img src="img-cnc-hero.jpg" alt="Collaborative robot arm above a batch of freshly machined copper-alloy components" width="1600" height="2101">
-      <figcaption><span>Robotics on the floor</span><span>Copper-alloy components, as machined</span></figcaption>
-    </figure>
+    <div></div>
   </div>
 </section>
 
